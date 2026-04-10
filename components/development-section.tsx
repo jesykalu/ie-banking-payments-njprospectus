@@ -54,27 +54,39 @@ export function DevelopmentSection() {
           </div>
         </div>
 
-        {/* Qualifications grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
-          {qualifications.map((qual) => (
-            <div key={qual.category} className="bg-white p-8">
-              <h3 className="text-lg font-semibold text-foreground mb-4">
-                {qual.category}
-              </h3>
-              <div className="space-y-2 mb-6">
-                {qual.items.map((item) => (
-                  <div
-                    key={item}
-                    className="text-sm text-muted-foreground flex items-center gap-2"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-[#A100FF]" />
-                    {item}
-                  </div>
-                ))}
+        {/* Image and Qualifications grid */}
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-0">
+          {/* Image */}
+          <div className="lg:col-span-1 relative overflow-hidden rounded-xl lg:rounded-none lg:rounded-l-xl aspect-[4/3] lg:aspect-auto">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1200911287-ZZfjZrt3atGHfE2R4jpMKv0xEacSo8.jpg"
+              alt="Professional entering modern office building"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Qualifications grid */}
+          <div className="lg:col-span-4 grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+            {qualifications.map((qual) => (
+              <div key={qual.category} className="bg-white p-8">
+                <h3 className="text-lg font-semibold text-foreground mb-4">
+                  {qual.category}
+                </h3>
+                <div className="space-y-2 mb-6">
+                  {qual.items.map((item) => (
+                    <div
+                      key={item}
+                      className="text-sm text-muted-foreground flex items-center gap-2"
+                    >
+                      <span className="w-1 h-1 rounded-full bg-[#A100FF]" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-[#A100FF] font-medium">{qual.note}</p>
               </div>
-              <p className="text-xs text-[#A100FF] font-medium">{qual.note}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
