@@ -48,9 +48,6 @@ export function CareerSection() {
 
                 {/* Content */}
                 <div>
-                  <p className="text-sm text-[#A100FF] font-medium mb-1">
-                    {level.years}
-                  </p>
                   <h3 className="text-lg font-semibold text-foreground mb-1">
                     {level.title}
                   </h3>
