@@ -64,7 +64,7 @@ export function WhyJoin() {
             Why Join Us
           </p>
           <h2 className="text-3xl lg:text-5xl font-bold text-white leading-tight text-balance">
-            The UK banks that will define the next decade are rebuilding themselves right now — new cores, new data foundations, new regulatory frameworks. Accenture is shaping that rebuilding. There is no better seat in UK banking consulting.
+            Accenture is at the centre of UK banking&apos;s transformation. There&apos;s no better place to be.
           </h2>
         </div>
 
