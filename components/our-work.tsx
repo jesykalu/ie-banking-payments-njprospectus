@@ -1,5 +1,7 @@
 "use client";
 
+import { FadeIn } from "@/components/fade-in";
+
 const projects = [
   {
     title: "Core banking modernisation",
@@ -33,31 +35,36 @@ export function OurWork() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-16 lg:mb-20">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-            Our Work
-          </p>
-          <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-3xl leading-tight mb-6">
-            The work that matters most.
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-4xl leading-relaxed">
-            Our work spans pure strategy through to large-scale transformation delivery, shaped by the distinctive character of the UK market: a concentrated Tier 1 banking sector, one of the world&apos;s most active regulatory regimes, a global payments infrastructure, and a vibrant challenger ecosystem.
-          </p>
+          <FadeIn>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              Our Work
+            </p>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-3xl leading-tight mb-6">
+              The work that matters most.
+            </h2>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <p className="text-lg text-muted-foreground max-w-4xl leading-relaxed">
+              Our work spans pure strategy through to large-scale transformation delivery, shaped by the distinctive character of the UK market: a concentrated Tier 1 banking sector, one of the world&apos;s most active regulatory regimes, a global payments infrastructure, and a vibrant challenger ecosystem.
+            </p>
+          </FadeIn>
         </div>
 
         {/* Cards grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <div
-              key={project.title}
-              className="bg-white p-8 border border-border hover:border-[#A100FF]/30 transition-colors"
-            >
-              <h3 className="text-lg font-semibold text-foreground mb-4">
-                {project.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-sm">
-                {project.body}
-              </p>
-            </div>
+          {projects.map((project, index) => (
+            <FadeIn key={project.title} delay={index * 100}>
+              <div className="bg-white p-8 border border-border hover:border-[#A100FF]/30 transition-all duration-500 hover-lift card-shine h-full">
+                <h3 className="text-lg font-semibold text-foreground mb-4">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  {project.body}
+                </p>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </div>

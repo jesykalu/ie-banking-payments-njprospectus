@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { FadeIn } from "@/components/fade-in";
 
 const capabilities = [
   {
@@ -50,23 +51,27 @@ export function Capabilities() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-16 lg:mb-24">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-            What We Do
-          </p>
-          <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
-            Six capability areas driving transformation.
-          </h2>
+          <FadeIn>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              What We Do
+            </p>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
+              Six capability areas driving transformation.
+            </h2>
+          </FadeIn>
         </div>
 
         {/* Capabilities list */}
         <div className="border-t border-border">
-          {capabilities.map((capability) => (
-            <div
-              key={capability.id}
-              className="group border-b border-border py-8 lg:py-10 cursor-pointer transition-colors hover:bg-secondary/30"
-              onMouseEnter={() => setHoveredId(capability.id)}
-              onMouseLeave={() => setHoveredId(null)}
-            >
+          {capabilities.map((capability, index) => (
+            <FadeIn key={capability.id} delay={index * 80}>
+              <div
+                className="group border-b border-border py-8 lg:py-10 cursor-pointer transition-all duration-500 hover:bg-secondary/30 hover:pl-4"
+                onMouseEnter={() => setHoveredId(capability.id)}
+                onMouseLeave={() => setHoveredId(null)}
+              >
               <div className="flex items-start gap-6 lg:gap-12">
                 {/* Number */}
                 <span
@@ -101,7 +106,8 @@ export function Capabilities() {
                     }`}
                 />
               </div>
-            </div>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </div>

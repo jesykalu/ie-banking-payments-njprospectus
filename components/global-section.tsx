@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatedCounter } from "./animated-counter";
+import { FadeIn } from "@/components/fade-in";
 
 const offices = [
   { city: "London", role: "HQ", people: "~8,000" },
@@ -70,42 +71,45 @@ export function GlobalSection() {
           {/* Right: Image and Offices */}
           <div className="space-y-8">
             {/* Canary Wharf Image */}
-            <div className="relative overflow-hidden rounded-xl aspect-[16/9]">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/990909558-9FUZz9L4LGu88jK1iQJAJdJHLhAYub.jpg"
-                alt="Professional working with tablet in London's Canary Wharf financial district at night"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <FadeIn direction="left">
+              <div className="relative overflow-hidden rounded-xl aspect-[16/9] image-zoom">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/990909558-9FUZz9L4LGu88jK1iQJAJdJHLhAYub.jpg"
+                  alt="Professional working with tablet in London's Canary Wharf financial district at night"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </FadeIn>
 
             <p className="text-xs uppercase tracking-[0.2em] text-background/50">
               Our Locations
             </p>
             <div className="space-y-4">
               {offices.map((office, index) => (
-                <div
-                  key={office.city}
-                  className={`p-6 border transition-colors ${
-                    index === 0
-                      ? "border-[#A100FF] bg-[#A100FF]/10"
-                      : "border-background/10 hover:border-background/20"
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-xl font-semibold text-background">
-                        {office.city}
-                      </h3>
-                      <p className="text-sm text-background/50">{office.role}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-2xl font-bold text-[#A100FF]">
-                        {office.people}
-                      </p>
-                      <p className="text-xs text-background/50">people</p>
+                <FadeIn key={office.city} delay={index * 80} direction="left">
+                  <div
+                    className={`p-6 border transition-all duration-500 hover:translate-x-2 ${
+                      index === 0
+                        ? "border-[#A100FF] bg-[#A100FF]/10"
+                        : "border-background/10 hover:border-background/20"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h3 className="text-xl font-semibold text-background">
+                          {office.city}
+                        </h3>
+                        <p className="text-sm text-background/50">{office.role}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-2xl font-bold text-[#A100FF]">
+                          {office.people}
+                        </p>
+                        <p className="text-xs text-background/50">people</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </FadeIn>
               ))}
             </div>
           </div>
