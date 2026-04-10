@@ -7,7 +7,6 @@ const offices = [
   { city: "London", role: "HQ", people: "~8,000" },
   { city: "Manchester", role: "Regional Hub", people: "~2,500" },
   { city: "Edinburgh", role: "Regional Hub", people: "~1,500" },
-  { city: "Newcastle", role: "Delivery Centre", people: "~1,200" },
   { city: "Dublin", role: "Ireland HQ", people: "~1,800" },
 ];
 
