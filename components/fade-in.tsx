@@ -22,23 +22,34 @@ export function FadeIn({
   once = true,
 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
 
   useEffect(() => {
+    // Check if IntersectionObserver is supported
+    if (typeof IntersectionObserver === "undefined") {
+      setHasAnimated(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setShouldAnimate(true);
+          // Small delay to ensure CSS transition works
+          requestAnimationFrame(() => {
+            setHasAnimated(true);
+          });
           if (once && ref.current) {
             observer.unobserve(ref.current);
           }
         } else if (!once) {
-          setIsVisible(false);
+          setHasAnimated(false);
         }
       },
       {
         threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+        rootMargin: "0px 0px -20px 0px",
       }
     );
 
@@ -50,7 +61,7 @@ export function FadeIn({
   }, [once]);
 
   const getTransform = () => {
-    if (!isVisible) {
+    if (!hasAnimated && shouldAnimate) {
       switch (direction) {
         case "up":
           return `translateY(${distance}px)`;
@@ -67,14 +78,20 @@ export function FadeIn({
     return "none";
   };
 
+  // If animation hasn't been triggered yet, show content but prepare for animation
+  const opacity = !shouldAnimate ? 1 : (hasAnimated ? 1 : 0);
+  const transform = !shouldAnimate ? "none" : getTransform();
+
   return (
     <div
       ref={ref}
       className={className}
       style={{
-        opacity: isVisible ? 1 : 0,
-        transform: getTransform(),
-        transition: `opacity ${duration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94) ${delay}ms, transform ${duration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94) ${delay}ms`,
+        opacity,
+        transform,
+        transition: shouldAnimate 
+          ? `opacity ${duration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94) ${delay}ms, transform ${duration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94) ${delay}ms`
+          : "none",
       }}
     >
       {children}
