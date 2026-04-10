@@ -54,7 +54,7 @@ export function Capabilities() {
             What We Do
           </p>
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
-            Six practice areas driving transformation.
+            Six capability areas driving transformation.
           </h2>
         </div>
 
@@ -70,11 +70,10 @@ export function Capabilities() {
               <div className="flex items-start gap-6 lg:gap-12">
                 {/* Number */}
                 <span
-                  className={`text-sm font-mono transition-colors duration-300 ${
-                    hoveredId === capability.id
+                  className={`text-sm font-mono transition-colors duration-300 ${hoveredId === capability.id
                       ? "text-[#A100FF]"
                       : "text-muted-foreground"
-                  }`}
+                    }`}
                 >
                   {capability.id}
                 </span>
@@ -82,11 +81,10 @@ export function Capabilities() {
                 {/* Content */}
                 <div className="flex-1 grid lg:grid-cols-2 gap-4 lg:gap-12">
                   <h3
-                    className={`text-xl lg:text-2xl font-semibold transition-colors duration-300 ${
-                      hoveredId === capability.id
+                    className={`text-xl lg:text-2xl font-semibold transition-colors duration-300 ${hoveredId === capability.id
                         ? "text-foreground"
                         : "text-foreground/80"
-                    }`}
+                      }`}
                   >
                     {capability.title}
                   </h3>
@@ -97,11 +95,10 @@ export function Capabilities() {
 
                 {/* Arrow */}
                 <ArrowUpRight
-                  className={`w-5 h-5 transition-all duration-300 ${
-                    hoveredId === capability.id
+                  className={`w-5 h-5 transition-all duration-300 ${hoveredId === capability.id
                       ? "text-[#A100FF] translate-x-1 -translate-y-1"
                       : "text-muted-foreground/30"
-                  }`}
+                    }`}
                 />
               </div>
             </div>
