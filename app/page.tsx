@@ -25,13 +25,13 @@ export default function HomePage() {
       <Process />
       <GlobalSection />
       <CareerSection />
+      <CareerLadder />
       <PerformanceSection />
       <OurWork />
       <IntegrationsTicker />
       <WhyJoin />
       <DiversityInclusion />
       <DevelopmentSection />
-      <CareerLadder />
       <CTASection />
       <Footer />
     </main>
