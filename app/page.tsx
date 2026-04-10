@@ -23,6 +23,7 @@ export default function HomePage() {
       <Hero />
       <StatsTicker />
       <Capabilities />
+      <WhyJoin />
       <Process />
       <GlobalSection />
       <CareerSection />
@@ -30,7 +31,6 @@ export default function HomePage() {
       <PerformanceSection />
       <OurWork />
       <IntegrationsTicker />
-      <WhyJoin />
       <TrainingDevelopment />
       <DevelopmentSection />
       <DiversityInclusion />
