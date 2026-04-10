@@ -4,10 +4,10 @@ import { AnimatedCounter } from "./animated-counter";
 import { FadeIn } from "@/components/fade-in";
 
 const offices = [
-  { city: "London", role: "HQ", people: "~8,000" },
-  { city: "Manchester", role: "Regional Hub", people: "~2,500" },
-  { city: "Edinburgh", role: "Regional Hub", people: "~1,500" },
-  { city: "Dublin", role: "Ireland HQ", people: "~1,800" },
+  { city: "London", role: "HQ" },
+  { city: "Manchester", role: "Regional Hub" },
+  { city: "Edinburgh", role: "Regional Hub" },
+  { city: "Dublin", role: "Ireland HQ" },
 ];
 
 export function GlobalSection() {
@@ -93,19 +93,11 @@ export function GlobalSection() {
                         : "border-background/10 hover:border-background/20"
                     }`}
                   >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h3 className="text-xl font-semibold text-background">
-                          {office.city}
-                        </h3>
-                        <p className="text-sm text-background/50">{office.role}</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-2xl font-bold text-[#A100FF]">
-                          {office.people}
-                        </p>
-                        <p className="text-xs text-background/50">people</p>
-                      </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-background">
+                        {office.city}
+                      </h3>
+                      <p className="text-sm text-background/50">{office.role}</p>
                     </div>
                   </div>
                 </FadeIn>
