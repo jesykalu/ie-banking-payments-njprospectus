@@ -58,15 +58,26 @@ export function CareerSection() {
           </div>
         </div>
 
-        {/* Quote */}
+        {/* Quote with image */}
         <div className="mt-16 lg:mt-24 pt-16 border-t border-border">
-          <blockquote className="text-2xl lg:text-3xl font-medium text-foreground max-w-3xl leading-relaxed">
-            &quot;The system is meritocratic. The best people advance ahead of 
-            their peer group, and that&apos;s consistent across the practice.&quot;
-          </blockquote>
-          <p className="text-muted-foreground mt-6">
-            — UK Banking Practice Leadership
-          </p>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div>
+              <blockquote className="text-2xl lg:text-3xl font-medium text-foreground leading-relaxed">
+                &quot;The system is meritocratic. The best people advance ahead of 
+                their peer group, and that&apos;s consistent across the practice.&quot;
+              </blockquote>
+              <p className="text-muted-foreground mt-6">
+                — UK Banking Practice Leadership
+              </p>
+            </div>
+            <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1131724309-TuaL73iFHpObVS9Ul3FrUEpNfmrBl1.jpg"
+                alt="Professional woman in urban business district looking ahead confidently"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
