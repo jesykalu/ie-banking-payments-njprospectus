@@ -7,7 +7,7 @@ const levels = [
   { title: "Consultant", years: "~2-3 years", desc: "Growing expertise" },
   { title: "Manager", years: "~3-4 years", desc: "Leading workstreams" },
   { title: "Senior Manager", years: "~3-5 years", desc: "Owning relationships" },
-  { title: "Managing Director", years: "Partnership", desc: "Practice leadership" },
+  { title: "Managing Director", years: "Partnership", desc: "Accenture leadership" },
 ];
 
 export function CareerSection() {
