@@ -61,9 +61,14 @@ export function Hero() {
             {/* Right: CTAs and Stats */}
             <div className="lg:col-span-7 lg:pl-12">
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-none px-8 py-6 text-sm font-medium">
-                  Explore Opportunities
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                <Button 
+                  asChild
+                  className="bg-foreground text-background hover:bg-foreground/90 rounded-none px-8 py-6 text-sm font-medium"
+                >
+                  <a href="https://www.accenture.com/gb-en/careers" target="_blank" rel="noopener noreferrer">
+                    Explore Opportunities
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
                 </Button>
                 <Button
                   variant="outline"
