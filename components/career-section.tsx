@@ -1,18 +1,48 @@
 "use client";
 
 import { FadeIn } from "@/components/fade-in";
+import { useEffect, useRef, useState } from "react";
 
 const levels = [
-  { title: "Analyst", years: "~2 years", desc: "Foundation building" },
-  { title: "Consultant", years: "~2-3 years", desc: "Growing expertise" },
-  { title: "Manager", years: "~3-4 years", desc: "Leading workstreams" },
-  { title: "Senior Manager", years: "~3-5 years", desc: "Owning relationships" },
-  { title: "Managing Director", years: "Partnership", desc: "Accenture leadership" },
+  { title: "Analyst", desc: "Foundation building" },
+  { title: "Consultant", desc: "Growing expertise" },
+  { title: "Manager", desc: "Leading workstreams" },
+  { title: "Senior Manager", desc: "Owning relationships" },
+  { title: "Managing Director", desc: "Accenture leadership" },
 ];
 
 export function CareerSection() {
+  const [progress, setProgress] = useState(0);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      
+      const rect = sectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Calculate progress based on how much of the section is visible
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      
+      // Start animation when section enters viewport
+      if (sectionTop < windowHeight && rect.bottom > 0) {
+        const visibleStart = Math.max(0, windowHeight - sectionTop);
+        const totalVisible = windowHeight + sectionHeight * 0.5;
+        const progressPercent = Math.min(100, (visibleStart / totalVisible) * 100);
+        setProgress(progressPercent);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial check
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section id="career" className="py-24 lg:py-32 bg-white">
+    <section id="career" className="py-24 lg:py-32 bg-white" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-16 lg:mb-24">
@@ -34,30 +64,50 @@ export function CareerSection() {
 
         {/* Career levels - horizontal timeline */}
         <div className="relative">
-          {/* Progress line */}
-          <div className="absolute top-6 left-0 right-0 h-px bg-border hidden lg:block" />
-          <div className="absolute top-6 left-0 w-3/4 h-px bg-[#A100FF] hidden lg:block" />
+          {/* Background progress line */}
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-border hidden lg:block" />
+          
+          {/* Animated progress line */}
+          <div 
+            className="absolute bottom-0 left-0 h-px bg-[#A100FF] hidden lg:block transition-all duration-300 ease-out"
+            style={{ width: `${progress}%` }}
+          />
+          
+          {/* Animated ball */}
+          <div 
+            className="absolute bottom-0 -translate-y-1/2 w-4 h-4 rounded-full bg-[#A100FF] hidden lg:block transition-all duration-300 ease-out shadow-lg shadow-[#A100FF]/50"
+            style={{ 
+              left: `${progress}%`,
+              transform: `translateX(-50%) translateY(50%)`,
+            }}
+          />
 
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
-            {levels.map((level, index) => (
-              <FadeIn key={level.title} delay={index * 100}>
-                <div className="relative group">
-                  {/* Dot */}
-                  <div
-                    className={`w-3 h-3 rounded-full mb-6 hidden lg:block transition-transform duration-300 group-hover:scale-150 ${index < 4 ? "bg-[#A100FF]" : "bg-border"
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4 pb-8">
+            {levels.map((level, index) => {
+              const levelProgress = (index / (levels.length - 1)) * 100;
+              const isActive = progress >= levelProgress;
+              
+              return (
+                <FadeIn key={level.title} delay={index * 100}>
+                  <div className="relative group">
+                    {/* Content */}
+                    <div className="mb-6">
+                      <h3 className={`text-lg font-semibold mb-1 transition-colors duration-300 group-hover:text-[#A100FF] ${isActive ? "text-foreground" : "text-muted-foreground"}`}>
+                        {level.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">{level.desc}</p>
+                    </div>
+                    
+                    {/* Dot underneath */}
+                    <div
+                      className={`w-3 h-3 rounded-full hidden lg:block transition-all duration-300 group-hover:scale-150 ${
+                        isActive ? "bg-[#A100FF]" : "bg-border"
                       }`}
-                  />
-
-                  {/* Content */}
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-1 transition-colors duration-300 group-hover:text-[#A100FF]">
-                      {level.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">{level.desc}</p>
+                    />
                   </div>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
 
