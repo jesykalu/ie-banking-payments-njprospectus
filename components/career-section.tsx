@@ -44,10 +44,7 @@ export function CareerSection() {
               A clear and meritocratic path.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              The career path runs from Analyst through to Managing Director.
-              The system is meritocratic — the best people advance ahead of their
-              peer group. For experienced hires, entry level is matched to your
-              background and track record.
+              Teams are multi-disciplinary by design. We are augmented as needed with data scientists, technology architects, regulatory SMEs, and change management practitioners — all drawn from across Accenture&apos;s broader FS capability.
             </p>
           </div>
         </div>
