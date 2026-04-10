@@ -24,9 +24,14 @@ export function Footer() {
           <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <span className="text-[#A100FF] font-bold">{">"}</span>
-              <span className="font-semibold text-foreground">
-                Accenture Banking
-              </span>
+              <div className="flex flex-col">
+                <span className="font-semibold text-foreground">
+                  Accenture UKI Banking Practice
+                </span>
+                <span className="text-xs text-muted-foreground italic">
+                  Candidate Prospectus
+                </span>
+              </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Strategy & Consulting

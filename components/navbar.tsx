@@ -25,9 +25,14 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-[#A100FF] font-bold text-lg">{">"}</span>
-            <span className="font-semibold text-foreground tracking-tight">
-              Accenture Banking
-            </span>
+            <div className="flex flex-col">
+              <span className="font-semibold text-foreground tracking-tight">
+                Accenture UKI Banking Practice
+              </span>
+              <span className="text-xs text-muted-foreground italic">
+                Candidate Prospectus
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
