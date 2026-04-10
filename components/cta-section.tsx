@@ -2,38 +2,53 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export function CTASection() {
   return (
-    <section className="py-24 lg:py-32 bg-foreground text-background">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.2em] text-background/50 mb-6">
+    <section className="relative py-32 lg:py-40 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/let-there-be-change.png"
+          alt="Let there be change"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Subtle overlay for text readability */}
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-[0.2em] text-white/70 mb-6">
             Join Us
           </p>
-          <h2 className="text-4xl lg:text-6xl font-bold text-background leading-tight mb-8">
-            There is no better seat in UK banking consulting.
+          <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-8">
+            Let there be change.
           </h2>
-          <p className="text-lg text-background/70 leading-relaxed mb-10 max-w-2xl">
+          <p className="text-lg text-white/90 leading-relaxed mb-10 max-w-2xl mx-auto">
             The UK banks that will define the next decade are rebuilding themselves 
             right now. Accenture is shaping that rebuilding. If this sounds like 
             the right next step, we&apos;d like to hear from you.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="bg-[#A100FF] hover:bg-[#A100FF]/90 text-white rounded-none px-8 py-6 text-sm font-medium">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button className="bg-white hover:bg-white/90 text-[#A100FF] rounded-none px-8 py-6 text-sm font-semibold">
               Start a Conversation
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
             <Button
               variant="outline"
-              className="rounded-none px-8 py-6 text-sm font-medium border-background/20 text-background hover:bg-background/10 hover:text-background"
+              className="rounded-none px-8 py-6 text-sm font-medium border-white/40 text-white hover:bg-white/10 hover:text-white bg-transparent"
             >
               Download Prospectus
             </Button>
           </div>
 
-          <p className="text-sm text-background/50 mt-8">
+          <p className="text-sm text-white/60 mt-8">
             For experienced professionals at Manager and Senior Manager level
           </p>
         </div>
