@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Your Career", href: "#career" },
   { label: "Our Work", href: "#our-work" },
   { label: "Why Join", href: "#join" },
+  { label: "Training & Development", href: "#training" },
   { label: "Diversity & Inclusion", href: "#diversity" },
 ];
 
