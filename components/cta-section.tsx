@@ -24,12 +24,6 @@ export function CTASection() {
               Start a Conversation
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-            <Button
-              variant="outline"
-              className="rounded-none px-8 py-6 text-sm font-medium border-white/20 text-white hover:bg-white/10 hover:text-white bg-transparent"
-            >
-              Download Prospectus
-            </Button>
           </div>
 
           <p className="text-sm text-white/40 mt-8">

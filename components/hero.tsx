@@ -70,12 +70,6 @@ export function Hero() {
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </a>
                 </Button>
-                <Button
-                  variant="outline"
-                  className="rounded-none px-8 py-6 text-sm font-medium border-foreground text-foreground hover:bg-foreground hover:text-background"
-                >
-                  Download Prospectus
-                </Button>
               </div>
 
               {/* Stats Grid */}
