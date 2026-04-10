@@ -11,7 +11,8 @@ import { WhyJoin } from "@/components/why-join"
 import { DiversityInclusion } from "@/components/diversity-inclusion"
 import { DevelopmentSection } from "@/components/development-section"
 import { PerformanceSection } from "@/components/performance-section"
-import { CareerLadder } from "@/components/career-ladder"
+
+import { TrainingDevelopment } from "@/components/training-development"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
 
@@ -22,16 +23,16 @@ export default function HomePage() {
       <Hero />
       <StatsTicker />
       <Capabilities />
+      <WhyJoin />
       <Process />
       <GlobalSection />
       <CareerSection />
+      <PerformanceSection />
       <OurWork />
       <IntegrationsTicker />
-      <WhyJoin />
-      <DiversityInclusion />
+      <TrainingDevelopment />
       <DevelopmentSection />
-      <PerformanceSection />
-      <CareerLadder />
+      <DiversityInclusion />
       <CTASection />
       <Footer />
     </main>

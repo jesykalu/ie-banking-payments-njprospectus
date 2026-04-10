@@ -72,10 +72,10 @@ export function Process() {
   const [activeType, setActiveType] = useState("strategy");
 
   return (
-    <section id="work" className="py-24 lg:py-32 bg-secondary/30">
+    <section id="work" className="py-12 lg:py-16 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="mb-16 lg:mb-24">
+        <div className="mb-10 lg:mb-14">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
             How We Work
           </p>

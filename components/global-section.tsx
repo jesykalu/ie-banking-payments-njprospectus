@@ -7,13 +7,12 @@ const offices = [
   { city: "London", role: "HQ", people: "~8,000" },
   { city: "Manchester", role: "Regional Hub", people: "~2,500" },
   { city: "Edinburgh", role: "Regional Hub", people: "~1,500" },
-  { city: "Newcastle", role: "Delivery Centre", people: "~1,200" },
   { city: "Dublin", role: "Ireland HQ", people: "~1,800" },
 ];
 
 export function GlobalSection() {
   return (
-    <section className="py-24 lg:py-32 bg-foreground text-background">
+    <section className="py-12 lg:py-16 bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left: Content */}

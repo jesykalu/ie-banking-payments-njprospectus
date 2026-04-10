@@ -27,10 +27,10 @@ const qualifications = [
 
 export function DevelopmentSection() {
   return (
-    <section className="py-24 lg:py-32 bg-white">
+    <section className="pt-6 lg:pt-8 pb-12 lg:pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header with background image */}
-        <div className="relative mb-16 lg:mb-24 rounded-xl overflow-hidden">
+        <div className="relative mb-10 lg:mb-14 rounded-xl overflow-hidden">
           {/* Background image */}
           <div className="absolute inset-0">
             <img
@@ -62,6 +62,9 @@ export function DevelopmentSection() {
                 </p>
                 <p className="text-sm text-white/70">
                   Annual global L&D investment
+                </p>
+                <p className="text-red-500 font-semibold mt-4">
+                  Content TBC
                 </p>
               </div>
             </div>

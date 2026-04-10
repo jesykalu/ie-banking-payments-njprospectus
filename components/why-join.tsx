@@ -44,7 +44,7 @@ const reasons = [
 
 export function WhyJoin() {
   return (
-    <section id="join" className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="join" className="relative py-12 lg:py-16 overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <Image

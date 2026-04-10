@@ -35,7 +35,7 @@ const roles = [
 
 export function CareerLadder() {
   return (
-    <section className="py-24 lg:py-32 bg-white">
+    <section className="pt-4 lg:pt-8 pb-16 lg:pb-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-16 lg:mb-24">

@@ -32,10 +32,10 @@ const levels = [
 
 export function CareerSection() {
   return (
-    <section id="career" className="py-24 lg:py-32 bg-white">
+    <section id="career" className="pt-12 lg:pt-16 pb-6 lg:pb-8 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="mb-16 lg:mb-24">
+        <div className="mb-10 lg:mb-14">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
             Your Career
           </p>
@@ -70,7 +70,7 @@ export function CareerSection() {
         </div>
 
         {/* Quote with image */}
-        <div className="mt-16 lg:mt-24 pt-16 border-t border-border">
+        <div className="mt-10 lg:mt-14 pt-10 border-t border-border">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <FadeIn direction="right">
               <div>
