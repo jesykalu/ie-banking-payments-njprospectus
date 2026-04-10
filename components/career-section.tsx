@@ -32,7 +32,7 @@ const levels = [
 
 export function CareerSection() {
   return (
-    <section id="career" className="pt-24 lg:pt-32 pb-12 lg:pb-16 bg-white">
+    <section id="career" className="pt-16 lg:pt-24 pb-8 lg:pb-12 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-16 lg:mb-24">

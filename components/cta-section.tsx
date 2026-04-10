@@ -6,7 +6,7 @@ import { FadeIn } from "@/components/fade-in";
 
 export function CTASection() {
   return (
-    <section className="relative py-32 lg:py-40 bg-[#0a0a0a] overflow-hidden">
+    <section className="relative py-20 lg:py-28 bg-[#0a0a0a] overflow-hidden">
       {/* Subtle animated background gradient */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-[#A100FF]/20 blur-[120px] animate-pulse" />
