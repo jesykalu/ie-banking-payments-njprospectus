@@ -15,11 +15,6 @@ export function CTASection() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <FadeIn>
-            <p className="text-xs uppercase tracking-[0.2em] text-white/50 mb-6">
-              Join Us
-            </p>
-          </FadeIn>
           <FadeIn delay={100}>
             <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-8">
               Let there be change.
@@ -42,7 +37,7 @@ export function CTASection() {
 
           <FadeIn delay={400}>
             <p className="text-sm text-white/40 mt-8">
-              For experienced professionals at Manager and Senior Manager level
+              For experienced professionals at Consultant, Manager and Senior Manager level
             </p>
           </FadeIn>
         </div>
