@@ -9,7 +9,9 @@ const navLinks = [
   { label: "What We Do", href: "#capabilities" },
   { label: "How We Work", href: "#work" },
   { label: "Your Career", href: "#career" },
+  { label: "Our Work", href: "#our-work" },
   { label: "Why Join", href: "#join" },
+  { label: "Diversity & Inclusion", href: "#diversity" },
 ];
 
 export function Navbar() {
@@ -35,7 +37,7 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 underline-animation"
               >
                 {link.label}
               </Link>

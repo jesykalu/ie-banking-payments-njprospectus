@@ -64,9 +64,12 @@ export function PerformanceSection() {
                 Year-end calibration. The primary promotion window. The most 
                 significant performance conversation of the year.
               </p>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <span className="text-xs px-3 py-1 bg-[#A100FF]/10 text-[#A100FF]">
                   Primary promotion window
+                </span>
+                <span className="text-xs px-3 py-1 bg-secondary text-muted-foreground">
+                  Compensation Review
                 </span>
               </div>
             </div>

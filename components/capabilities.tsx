@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { FadeIn } from "@/components/fade-in";
 
 const capabilities = [
   {
@@ -12,25 +13,25 @@ const capabilities = [
   },
   {
     id: "02",
-    title: "UK Payments Infrastructure",
-    description:
-      "Engaged by the Bank of England on RTGS renewal and New Payments Architecture through Pay.UK. Central to UK financial infrastructure.",
-  },
-  {
-    id: "03",
-    title: "Regulatory Response",
-    description:
-      "Navigating Basel 3.1, Consumer Duty, SM&CR reform, and PRA operational resilience. Regulatory imperatives driving sustained demand.",
-  },
-  {
-    id: "04",
-    title: "AI & Data Transformation",
+    title: "AI & Data",
     description:
       "Deploying AI-driven credit decisioning, fraud detection, and customer analytics using Accenture AI Refinery and FinForge accelerators.",
   },
   {
+    id: "03",
+    title: "Payments Strategy",
+    description:
+      "Engaged by the Bank of England on RTGS renewal and New Payments Architecture through Pay.UK. Central to UK financial infrastructure.",
+  },
+  {
+    id: "04",
+    title: "UK Regulatory Response (PRA/FCA)",
+    description:
+      "Navigating Basel 3.1, Consumer Duty, SM&CR reform, and PRA operational resilience. Regulatory imperatives driving sustained demand.",
+  },
+  {
     id: "05",
-    title: "Digital Banking & CX",
+    title: "Digital CX",
     description:
       "Redesigning end-to-end digital propositions for UK retail banks. Journey reimagination in partnership with Accenture Song.",
   },
@@ -50,31 +51,34 @@ export function Capabilities() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-16 lg:mb-24">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-            What We Do
-          </p>
-          <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
-            Six practice areas driving transformation.
-          </h2>
+          <FadeIn>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              What We Do
+            </p>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
+              Six capability areas driving transformation.
+            </h2>
+          </FadeIn>
         </div>
 
         {/* Capabilities list */}
         <div className="border-t border-border">
-          {capabilities.map((capability) => (
-            <div
-              key={capability.id}
-              className="group border-b border-border py-8 lg:py-10 cursor-pointer transition-colors hover:bg-secondary/30"
-              onMouseEnter={() => setHoveredId(capability.id)}
-              onMouseLeave={() => setHoveredId(null)}
-            >
+          {capabilities.map((capability, index) => (
+            <FadeIn key={capability.id} delay={index * 80}>
+              <div
+                className="group border-b border-border py-8 lg:py-10 cursor-pointer transition-all duration-500 hover:bg-secondary/30 hover:pl-4"
+                onMouseEnter={() => setHoveredId(capability.id)}
+                onMouseLeave={() => setHoveredId(null)}
+              >
               <div className="flex items-start gap-6 lg:gap-12">
                 {/* Number */}
                 <span
-                  className={`text-sm font-mono transition-colors duration-300 ${
-                    hoveredId === capability.id
+                  className={`text-sm font-mono transition-colors duration-300 ${hoveredId === capability.id
                       ? "text-[#A100FF]"
                       : "text-muted-foreground"
-                  }`}
+                    }`}
                 >
                   {capability.id}
                 </span>
@@ -82,11 +86,10 @@ export function Capabilities() {
                 {/* Content */}
                 <div className="flex-1 grid lg:grid-cols-2 gap-4 lg:gap-12">
                   <h3
-                    className={`text-xl lg:text-2xl font-semibold transition-colors duration-300 ${
-                      hoveredId === capability.id
+                    className={`text-xl lg:text-2xl font-semibold transition-colors duration-300 ${hoveredId === capability.id
                         ? "text-foreground"
                         : "text-foreground/80"
-                    }`}
+                      }`}
                   >
                     {capability.title}
                   </h3>
@@ -97,14 +100,14 @@ export function Capabilities() {
 
                 {/* Arrow */}
                 <ArrowUpRight
-                  className={`w-5 h-5 transition-all duration-300 ${
-                    hoveredId === capability.id
+                  className={`w-5 h-5 transition-all duration-300 ${hoveredId === capability.id
                       ? "text-[#A100FF] translate-x-1 -translate-y-1"
                       : "text-muted-foreground/30"
-                  }`}
+                    }`}
                 />
               </div>
-            </div>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </div>

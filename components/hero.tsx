@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { FadeIn } from "@/components/fade-in";
 
 export function Hero() {
   return (
@@ -13,7 +14,7 @@ export function Hero() {
           src="/images/hero-bg.png"
           alt="Banking professional"
           fill
-          className="object-cover object-top"
+          className="object-cover object-top scale-105 animate-[scale-in_1.5s_ease-out_forwards]"
           priority
         />
         {/* Dark overlay for contrast - less transparent */}
@@ -23,18 +24,24 @@ export function Hero() {
         <div className="absolute inset-0 flex flex-col justify-end pb-20 lg:pb-32">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
             <div className="max-w-3xl">
-              <p className="text-white/70 text-xs uppercase tracking-[0.2em] mb-6 font-medium">
-                Strategy & Consulting / Banking / UK & Ireland
-              </p>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-6">
-                Where banking
-                <br />
-                meets <span className="text-[#A100FF]">reinvention.</span>
-              </h1>
-              <p className="text-lg text-white/80 max-w-xl leading-relaxed">
-                We are strategists, technologists, and industry experts 
-                transforming the future of financial services.
-              </p>
+              <FadeIn delay={200} duration={800}>
+                <p className="text-white/70 text-xs uppercase tracking-[0.2em] mb-6 font-medium">
+                  Strategy & Consulting / Banking / UK & Ireland
+                </p>
+              </FadeIn>
+              <FadeIn delay={400} duration={800}>
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-6">
+                  Where banking
+                  <br />
+                  meets <span className="text-[#A100FF]">reinvention.</span>
+                </h1>
+              </FadeIn>
+              <FadeIn delay={600} duration={800}>
+                <p className="text-lg text-white/80 max-w-xl leading-relaxed">
+                  We are strategists, technologists, and industry experts 
+                  transforming the future of financial services.
+                </p>
+              </FadeIn>
             </div>
           </div>
         </div>
@@ -61,15 +68,14 @@ export function Hero() {
             {/* Right: CTAs and Stats */}
             <div className="lg:col-span-7 lg:pl-12">
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-none px-8 py-6 text-sm font-medium">
-                  Explore Opportunities
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-                <Button
-                  variant="outline"
-                  className="rounded-none px-8 py-6 text-sm font-medium border-foreground text-foreground hover:bg-foreground hover:text-background"
+                <Button 
+                  asChild
+                  className="bg-foreground text-background hover:bg-foreground/90 rounded-none px-8 py-6 text-sm font-medium"
                 >
-                  Download Prospectus
+                  <a href="https://www.accenture.com/gb-en/careers" target="_blank" rel="noopener noreferrer">
+                    Explore Opportunities
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
                 </Button>
               </div>
 
@@ -80,15 +86,17 @@ export function Hero() {
                   { value: "40+", label: "Banking clients" },
                   { value: "6", label: "Practice areas" },
                   { value: "£150m+", label: "BoE mandate" },
-                ].map((stat) => (
-                  <div key={stat.label} className="border-l-2 border-[#A100FF] pl-4">
-                    <p className="text-2xl lg:text-3xl font-bold text-foreground">
-                      {stat.value}
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-1 uppercase tracking-wide">
-                      {stat.label}
-                    </p>
-                  </div>
+                ].map((stat, index) => (
+                  <FadeIn key={stat.label} delay={index * 100} direction="up">
+                    <div className="border-l-2 border-[#A100FF] pl-4 hover-lift">
+                      <p className="text-2xl lg:text-3xl font-bold text-foreground">
+                        {stat.value}
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-1 uppercase tracking-wide">
+                        {stat.label}
+                      </p>
+                    </div>
+                  </FadeIn>
                 ))}
               </div>
             </div>

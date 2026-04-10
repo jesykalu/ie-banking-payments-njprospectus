@@ -5,8 +5,10 @@ import { Capabilities } from "@/components/capabilities"
 import { Process } from "@/components/process"
 import { GlobalSection } from "@/components/global-section"
 import { CareerSection } from "@/components/career-section"
+import { OurWork } from "@/components/our-work"
 import { IntegrationsTicker } from "@/components/integrations-ticker"
 import { WhyJoin } from "@/components/why-join"
+import { DiversityInclusion } from "@/components/diversity-inclusion"
 import { DevelopmentSection } from "@/components/development-section"
 import { PerformanceSection } from "@/components/performance-section"
 import { CareerLadder } from "@/components/career-ladder"
@@ -23,8 +25,10 @@ export default function HomePage() {
       <Process />
       <GlobalSection />
       <CareerSection />
+      <OurWork />
       <IntegrationsTicker />
       <WhyJoin />
+      <DiversityInclusion />
       <DevelopmentSection />
       <PerformanceSection />
       <CareerLadder />
