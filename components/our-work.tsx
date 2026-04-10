@@ -31,7 +31,7 @@ const projects = [
 
 export function OurWork() {
   return (
-    <section id="our-work" className="py-24 lg:py-32 bg-secondary/30">
+    <section id="our-work" className="pt-12 lg:pt-16 pb-24 lg:pb-32 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-16 lg:mb-20">
