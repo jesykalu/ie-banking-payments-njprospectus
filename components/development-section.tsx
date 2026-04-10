@@ -63,6 +63,9 @@ export function DevelopmentSection() {
                 <p className="text-sm text-white/70">
                   Annual global L&D investment
                 </p>
+                <p className="text-red-500 font-semibold mt-4">
+                  Content TBC
+                </p>
               </div>
             </div>
           </div>
