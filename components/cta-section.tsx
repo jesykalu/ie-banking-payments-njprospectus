@@ -7,9 +7,9 @@ export function CTASection() {
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#A100FF]/10 via-transparent to-transparent" />
-      <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-[#A100FF]/20 rounded-full blur-[128px] opacity-30" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] bg-[#A100FF]/15 rounded-full blur-[100px] opacity-20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#A100FF]/5 via-transparent to-transparent" />
+      <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-[#A100FF]/10 rounded-full blur-[128px] opacity-30" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] bg-[#A100FF]/8 rounded-full blur-[100px] opacity-20" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-6 text-balance">

@@ -56,7 +56,7 @@ export function GlobalSection() {
 
           {/* UK&I Map Visual */}
           <div className="relative">
-            <div className="aspect-square rounded-3xl bg-gradient-to-br from-[#A100FF]/10 via-secondary/50 to-transparent border border-border p-8 lg:p-12">
+            <div className="aspect-square rounded-3xl bg-gradient-to-br from-[#A100FF]/5 via-white to-[#A100FF]/10 border border-[#A100FF]/10 p-8 lg:p-12 shadow-lg shadow-[#A100FF]/5">
               {/* Stylized UK & Ireland outline */}
               <div className="relative w-full h-full">
                 {/* Background glow */}
@@ -110,8 +110,8 @@ export function GlobalSection() {
                     inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors
                     ${
                       office.primary
-                        ? "bg-[#A100FF]/10 border-[#A100FF]/30 text-[#A100FF]"
-                        : "bg-card border-border text-muted-foreground hover:border-[#A100FF]/20"
+                        ? "bg-[#A100FF] border-[#A100FF] text-white shadow-md shadow-[#A100FF]/20"
+                        : "bg-white border-border text-foreground hover:border-[#A100FF]/30 shadow-sm"
                     }
                   `}
                 >

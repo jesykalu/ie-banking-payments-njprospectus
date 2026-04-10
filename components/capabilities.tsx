@@ -70,10 +70,10 @@ export function Capabilities() {
             <div
               key={capability.number}
               className={cn(
-                "group relative p-6 lg:p-8 rounded-2xl border transition-all duration-300 cursor-pointer",
+                "group relative p-6 lg:p-8 rounded-2xl border transition-all duration-300 cursor-pointer shadow-sm",
                 activeIndex === index
-                  ? "bg-[#A100FF]/5 border-[#A100FF]/30"
-                  : "bg-card/50 border-border hover:border-[#A100FF]/20 hover:bg-[#A100FF]/5"
+                  ? "bg-white border-[#A100FF]/30 shadow-md shadow-[#A100FF]/5"
+                  : "bg-white/80 border-border hover:border-[#A100FF]/20 hover:shadow-md hover:shadow-[#A100FF]/5"
               )}
               onMouseEnter={() => setActiveIndex(index)}
             >

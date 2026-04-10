@@ -11,7 +11,7 @@ const stats = [
 
 export function StatsTicker() {
   return (
-    <section className="relative border-y border-border bg-secondary/30 overflow-hidden py-6">
+    <section className="relative border-y border-border bg-gradient-to-r from-[#A100FF]/5 via-white to-[#A100FF]/5 overflow-hidden py-8">
       <div className="flex animate-scroll">
         {[...stats, ...stats, ...stats].map((stat, index) => (
           <div

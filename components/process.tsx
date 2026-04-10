@@ -59,7 +59,7 @@ export function Process() {
   const [activeStep, setActiveStep] = useState(0)
 
   return (
-    <section id="work" className="py-24 lg:py-32 bg-secondary/20 relative">
+    <section id="work" className="py-24 lg:py-32 bg-gradient-to-b from-white via-[#A100FF]/[0.02] to-white relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-16">
@@ -83,10 +83,10 @@ export function Process() {
             <div
               key={step.number}
               className={cn(
-                "relative p-6 lg:p-8 rounded-2xl border transition-all duration-300 cursor-pointer",
+                "relative p-6 lg:p-8 rounded-2xl border transition-all duration-300 cursor-pointer shadow-sm",
                 activeStep === index
-                  ? "bg-[#A100FF]/5 border-[#A100FF]/30"
-                  : "bg-card/50 border-border hover:border-[#A100FF]/20"
+                  ? "bg-white border-[#A100FF]/30 shadow-md shadow-[#A100FF]/5"
+                  : "bg-white/80 border-border hover:border-[#A100FF]/20 hover:shadow-md"
               )}
               onClick={() => setActiveStep(index)}
             >
@@ -128,7 +128,7 @@ export function Process() {
         </div>
 
         {/* Week view panel */}
-        <div className="rounded-2xl border border-border bg-card/50 overflow-hidden">
+        <div className="rounded-2xl border border-border bg-white shadow-sm overflow-hidden">
           <div className="p-6 lg:p-8 border-b border-border bg-[#A100FF]/5">
             <h3 className="text-lg font-semibold text-foreground">
               A week in the practice

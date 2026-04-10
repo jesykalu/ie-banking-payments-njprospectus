@@ -44,7 +44,7 @@ export function IntegrationsTicker() {
               key={`client-${index}`}
               className="shrink-0 mx-2"
             >
-              <div className="px-6 py-3 rounded-full border border-border bg-card/50 hover:border-[#A100FF]/30 hover:bg-[#A100FF]/5 transition-all duration-300">
+              <div className="px-6 py-3 rounded-full border border-border bg-white shadow-sm hover:border-[#A100FF]/30 hover:shadow-md transition-all duration-300">
                 <span className="text-sm font-medium text-foreground whitespace-nowrap">
                   {client}
                 </span>
@@ -66,7 +66,7 @@ export function IntegrationsTicker() {
               key={`platform-${index}`}
               className="shrink-0 mx-2"
             >
-              <div className="px-6 py-3 rounded-full border border-[#A100FF]/20 bg-[#A100FF]/5 hover:border-[#A100FF]/40 transition-all duration-300">
+              <div className="px-6 py-3 rounded-full border border-[#A100FF]/30 bg-[#A100FF]/5 shadow-sm hover:border-[#A100FF]/50 hover:shadow-md transition-all duration-300">
                 <span className="text-sm font-medium text-[#A100FF] whitespace-nowrap">
                   {platform}
                 </span>

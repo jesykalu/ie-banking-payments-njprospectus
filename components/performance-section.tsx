@@ -21,7 +21,7 @@ const cycles = [
 
 export function PerformanceSection() {
   return (
-    <section className="py-24 lg:py-32 bg-secondary/20 relative">
+    <section className="py-24 lg:py-32 bg-gradient-to-b from-white via-[#A100FF]/[0.02] to-white relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-16">
@@ -46,7 +46,7 @@ export function PerformanceSection() {
           {cycles.map((cycle, index) => (
             <div
               key={cycle.title}
-              className="relative p-6 lg:p-8 rounded-2xl border border-border bg-card/50 hover:border-[#A100FF]/30 transition-all duration-300"
+              className="relative p-6 lg:p-8 rounded-2xl border border-border bg-white shadow-sm hover:border-[#A100FF]/30 hover:shadow-md hover:shadow-[#A100FF]/5 transition-all duration-300"
             >
               {/* Cycle indicator */}
               <div className="flex items-center justify-between mb-6">

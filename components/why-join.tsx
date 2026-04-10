@@ -39,7 +39,7 @@ const features = [
 
 export function WhyJoin() {
   return (
-    <section id="why-join" className="py-24 lg:py-32 bg-secondary/20 relative">
+    <section id="why-join" className="py-24 lg:py-32 bg-gradient-to-b from-white via-[#A100FF]/[0.02] to-white relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-16">
@@ -71,7 +71,7 @@ export function WhyJoin() {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="group relative p-6 lg:p-8 rounded-2xl border border-border bg-card/50 hover:border-[#A100FF]/30 hover:bg-[#A100FF]/5 transition-all duration-300"
+              className="group relative p-6 lg:p-8 rounded-2xl border border-border bg-white shadow-sm hover:border-[#A100FF]/30 hover:shadow-md hover:shadow-[#A100FF]/5 transition-all duration-300"
             >
               {/* Icon */}
               <div className="w-12 h-12 rounded-xl bg-[#A100FF]/10 flex items-center justify-center mb-6 group-hover:bg-[#A100FF]/20 transition-colors">

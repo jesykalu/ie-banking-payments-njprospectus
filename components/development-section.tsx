@@ -79,10 +79,10 @@ export function DevelopmentSection() {
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
                   className={cn(
-                    "flex items-center gap-4 p-4 rounded-xl border text-left transition-all duration-300",
+                    "flex items-center gap-4 p-4 rounded-xl border text-left transition-all duration-300 shadow-sm",
                     activeCategory === category.id
-                      ? "bg-[#A100FF]/10 border-[#A100FF]/30"
-                      : "bg-card/50 border-border hover:border-[#A100FF]/20"
+                      ? "bg-white border-[#A100FF]/30 shadow-md shadow-[#A100FF]/5"
+                      : "bg-white/80 border-border hover:border-[#A100FF]/20 hover:shadow-md"
                   )}
                 >
                   <div
@@ -112,7 +112,7 @@ export function DevelopmentSection() {
 
           {/* Content panel */}
           <div className="lg:col-span-3">
-            <div className="rounded-2xl border border-border bg-card/50 overflow-hidden">
+            <div className="rounded-2xl border border-border bg-white shadow-sm overflow-hidden">
               {/* Header bar mimicking code editor */}
               <div className="flex items-center gap-2 px-4 py-3 bg-secondary/50 border-b border-border">
                 <div className="w-3 h-3 rounded-full bg-red-500/50" />
@@ -139,7 +139,7 @@ export function DevelopmentSection() {
               {categories.map((category) => (
                 <div
                   key={category.id}
-                  className="p-6 rounded-2xl border border-border bg-card/50"
+                  className="p-6 rounded-2xl border border-border bg-white shadow-sm"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-8 h-8 rounded-lg bg-[#A100FF]/10 flex items-center justify-center">

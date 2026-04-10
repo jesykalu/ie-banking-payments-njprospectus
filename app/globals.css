@@ -3,46 +3,46 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Accenture Purple: #A100FF */
+/* Accenture Purple: #A100FF - Premium Light Theme */
 :root {
-  --background: oklch(0.08 0.01 285);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.12 0.01 285);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.12 0.01 285);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.60 0.28 303);
+  --background: oklch(0.995 0 0);
+  --foreground: oklch(0.15 0.01 285);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.01 285);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.01 285);
+  --primary: oklch(0.50 0.28 303);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.18 0.02 285);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.20 0.01 285);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.60 0.28 303);
+  --secondary: oklch(0.97 0.005 285);
+  --secondary-foreground: oklch(0.15 0.01 285);
+  --muted: oklch(0.96 0.005 285);
+  --muted-foreground: oklch(0.45 0.01 285);
+  --accent: oklch(0.50 0.28 303);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.25 0.02 285);
-  --input: oklch(0.20 0.01 285);
-  --ring: oklch(0.60 0.28 303);
-  --chart-1: oklch(0.60 0.28 303);
+  --border: oklch(0.92 0.005 285);
+  --input: oklch(0.96 0.005 285);
+  --ring: oklch(0.50 0.28 303);
+  --chart-1: oklch(0.50 0.28 303);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.10 0.01 285);
-  --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.60 0.28 303);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: oklch(0.15 0.01 285);
+  --sidebar-primary: oklch(0.50 0.28 303);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.18 0.02 285);
-  --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(0.25 0.02 285);
-  --sidebar-ring: oklch(0.60 0.28 303);
+  --sidebar-accent: oklch(0.96 0.005 285);
+  --sidebar-accent-foreground: oklch(0.15 0.01 285);
+  --sidebar-border: oklch(0.92 0.005 285);
+  --sidebar-ring: oklch(0.50 0.28 303);
   
   /* Accenture specific */
   --accenture-purple: #A100FF;
-  --accenture-purple-light: oklch(0.70 0.25 303);
-  --accenture-purple-dark: oklch(0.45 0.28 303);
+  --accenture-purple-light: oklch(0.65 0.22 303);
+  --accenture-purple-dark: oklch(0.40 0.28 303);
 }
 
 @theme inline {

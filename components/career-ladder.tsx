@@ -55,10 +55,10 @@ export function CareerLadder() {
             <div
               key={role.number}
               className={cn(
-                "relative p-6 lg:p-8 rounded-2xl border transition-all duration-300",
+                "relative p-6 lg:p-8 rounded-2xl border transition-all duration-300 shadow-sm",
                 role.badge
-                  ? "bg-[#A100FF]/5 border-[#A100FF]/30"
-                  : "bg-card/50 border-border hover:border-[#A100FF]/20"
+                  ? "bg-white border-[#A100FF]/30 shadow-md shadow-[#A100FF]/5"
+                  : "bg-white border-border hover:border-[#A100FF]/20 hover:shadow-md"
               )}
             >
               {/* Badge */}

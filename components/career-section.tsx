@@ -52,7 +52,7 @@ function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: str
 
 export function CareerSection() {
   return (
-    <section id="career" className="py-24 lg:py-32 bg-secondary/20 relative">
+    <section id="career" className="py-24 lg:py-32 bg-gradient-to-b from-white via-[#A100FF]/[0.02] to-white relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-16">
@@ -80,8 +80,8 @@ export function CareerSection() {
               className="relative group"
             >
               <div className={`
-                relative p-6 lg:p-8 rounded-2xl border border-border bg-gradient-to-br ${item.color}
-                hover:border-[#A100FF]/30 transition-all duration-300
+                relative p-6 lg:p-8 rounded-2xl border border-border bg-white shadow-sm
+                hover:border-[#A100FF]/30 hover:shadow-md hover:shadow-[#A100FF]/5 transition-all duration-300
               `}>
                 {/* Level number */}
                 <div className="absolute top-4 right-4 text-xs font-mono text-muted-foreground">
