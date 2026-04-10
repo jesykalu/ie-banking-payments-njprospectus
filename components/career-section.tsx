@@ -89,21 +89,23 @@ export function CareerSection() {
               
               return (
                 <FadeIn key={level.title} delay={index * 100}>
-                  <div className="relative group">
-                    {/* Content */}
-                    <div className="mb-6">
-                      <h3 className={`text-lg font-semibold mb-1 transition-colors duration-300 group-hover:text-[#A100FF] ${isActive ? "text-foreground" : "text-muted-foreground"}`}>
-                        {level.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">{level.desc}</p>
-                    </div>
+                  <div className="relative group h-full flex flex-col">
+                    {/* Title - fixed height to align */}
+                    <h3 className={`text-lg font-semibold transition-colors duration-300 group-hover:text-[#A100FF] min-h-[56px] lg:min-h-[28px] ${isActive ? "text-foreground" : "text-muted-foreground"}`}>
+                      {level.title}
+                    </h3>
                     
-                    {/* Dot underneath */}
-                    <div
-                      className={`w-3 h-3 rounded-full hidden lg:block transition-all duration-300 group-hover:scale-150 ${
-                        isActive ? "bg-[#A100FF]" : "bg-border"
-                      }`}
-                    />
+                    {/* Description - fixed height to align */}
+                    <p className="text-sm text-muted-foreground min-h-[40px] mb-6">{level.desc}</p>
+                    
+                    {/* Dot underneath - pushed to bottom */}
+                    <div className="mt-auto">
+                      <div
+                        className={`w-3 h-3 rounded-full hidden lg:block transition-all duration-300 group-hover:scale-150 ${
+                          isActive ? "bg-[#A100FF]" : "bg-border"
+                        }`}
+                      />
+                    </div>
                   </div>
                 </FadeIn>
               );
