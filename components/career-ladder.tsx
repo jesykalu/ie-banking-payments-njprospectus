@@ -2,38 +2,34 @@
 
 const roles = [
   {
-    level: "Manager",
-    years: "~3-4 years",
-    highlight: false,
-    responsibilities: [
-      "Leading delivery teams on UK banking mandates",
-      "Managing client relationships at working level",
-      "Structuring work plans & coaching juniors",
-      "Contributing to proposals and BD",
-    ],
+    level: "Managing Director",
+    subtitle: "Partnership",
+    description:
+      "Account ownership and P&L accountability. Client relationships at ExCo level. Firm and market leadership. Equity and long-term incentives.",
   },
   {
     level: "Senior Manager",
-    years: "~3-5 years",
-    highlight: true,
-    badge: "Most common entry point",
-    responsibilities: [
-      "Day-to-day engagement leadership",
-      "Primary client counterpart at Director level",
-      "C-suite interaction",
-      "Shaping proposals & deepening relationships",
-    ],
+    subtitle: "Day-to-day engagement leadership",
+    description:
+      "Primary client counterpart at Director level. C-suite interaction. Shaping proposals and deepening relationships.",
   },
   {
-    level: "Managing Director",
-    years: "Partnership",
-    highlight: false,
-    responsibilities: [
-      "Account ownership and P&L accountability",
-      "Client relationships at ExCo level",
-      "Firm and market leadership",
-      "Equity and long-term incentives",
-    ],
+    level: "Manager",
+    subtitle: "Leading delivery teams",
+    description:
+      "Managing client relationships at working level. Structuring work plans and coaching juniors. Contributing to proposals and business development.",
+  },
+  {
+    level: "Consultant",
+    subtitle: "Core workstream contributor",
+    description:
+      "Owns discrete analytical or design workstreams end-to-end. Conducts stakeholder interviews, develops deliverables. The level at which you build a visible banking specialism.",
+  },
+  {
+    level: "Analyst",
+    subtitle: "Delivery foundation",
+    description:
+      "Data gathering, quantitative analysis, modelling, and content production. The quality of analyst output sets the quality ceiling for the entire team.",
   },
 ];
 
@@ -44,65 +40,38 @@ export function CareerLadder() {
         {/* Section header */}
         <div className="mb-16 lg:mb-24">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-            Entry Points
+            Career Levels
           </p>
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
-            Where experienced hires come in.
+            The consulting career ladder.
           </h2>
         </div>
 
-        {/* Roles */}
-        <div className="grid lg:grid-cols-3 gap-px bg-border">
+        {/* Roles grid */}
+        <div className="grid lg:grid-cols-5 gap-px bg-border mb-12">
           {roles.map((role) => (
-            <div
-              key={role.level}
-              className={`relative p-8 lg:p-10 ${
-                role.highlight ? "bg-foreground text-background" : "bg-white"
-              }`}
-            >
-              {/* Badge */}
-              {role.badge && (
-                <span className="absolute top-4 right-4 text-xs px-3 py-1 bg-[#A100FF] text-white">
-                  {role.badge}
-                </span>
-              )}
-
-              <p
-                className={`text-sm font-medium mb-2 ${
-                  role.highlight ? "text-[#A100FF]" : "text-[#A100FF]"
-                }`}
-              >
-                {role.years}
+            <div key={role.level} className="bg-white p-6 lg:p-8">
+              <p className="text-xs uppercase tracking-[0.15em] text-[#A100FF] font-medium mb-2">
+                {role.subtitle}
               </p>
-              <h3
-                className={`text-2xl lg:text-3xl font-bold mb-6 ${
-                  role.highlight ? "text-background" : "text-foreground"
-                }`}
-              >
+              <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-4">
                 {role.level}
               </h3>
-
-              <ul className="space-y-3">
-                {role.responsibilities.map((resp) => (
-                  <li
-                    key={resp}
-                    className={`text-sm flex items-start gap-3 ${
-                      role.highlight
-                        ? "text-background/70"
-                        : "text-muted-foreground"
-                    }`}
-                  >
-                    <span
-                      className={`w-1 h-1 rounded-full mt-2 shrink-0 ${
-                        role.highlight ? "bg-[#A100FF]" : "bg-[#A100FF]"
-                      }`}
-                    />
-                    {resp}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {role.description}
+              </p>
             </div>
           ))}
+        </div>
+
+        {/* Multi-disciplinary note */}
+        <div className="border-t border-border pt-8">
+          <p className="text-sm text-muted-foreground max-w-4xl leading-relaxed">
+            Teams are multi-disciplinary by design. We are augmented as needed
+            with data scientists, technology architects, regulatory SMEs, and
+            change management practitioners — all drawn from across
+            Accenture&apos;s broader FS capability.
+          </p>
         </div>
       </div>
     </section>
