@@ -3,11 +3,31 @@
 import { FadeIn } from "@/components/fade-in";
 
 const levels = [
-  { title: "Analyst", years: "~2 years", desc: "Foundation building" },
-  { title: "Consultant", years: "~2-3 years", desc: "Growing expertise" },
-  { title: "Manager", years: "~3-4 years", desc: "Leading workstreams" },
-  { title: "Senior Manager", years: "~3-5 years", desc: "Owning relationships" },
-  { title: "Managing Director", years: "Partnership", desc: "Accenture leadership" },
+  { 
+    title: "Analyst", 
+    role: "Delivery foundation",
+    desc: "Data gathering, quantitative analysis, modelling, and content production. The quality of analyst output sets the quality ceiling for the entire team." 
+  },
+  { 
+    title: "Consultant", 
+    role: "Core workstream contributor",
+    desc: "Owns discrete analytical or design workstreams end-to-end. Conducts stakeholder interviews, develops deliverables. The level at which you build a visible banking specialism." 
+  },
+  { 
+    title: "Manager", 
+    role: "Workstream lead",
+    desc: "Manages day-to-day delivery: structures the work plan, coaches analysts and consultants, synthesises outputs. The pivot point between doing and leading." 
+  },
+  { 
+    title: "Senior Manager", 
+    role: "Engagement lead",
+    desc: "Day-to-day leadership of the engagement. Primary counterpart to Director/Head of level at the bank. Manages quality, team performance, and the weekly rhythm of delivery." 
+  },
+  { 
+    title: "Managing Director", 
+    role: "Account / engagement sponsor",
+    desc: "Owns the senior client relationship — typically ExCo or MD level at the bank. Shapes the commercial agreement, provides strategic oversight. Usually spans multiple concurrent engagements." 
+  },
 ];
 
 export function CareerSection() {
@@ -24,41 +44,29 @@ export function CareerSection() {
               A clear and meritocratic path.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              The career path runs from Analyst through to Managing Director.
-              The system is meritocratic — the best people advance ahead of their
-              peer group. For experienced hires, entry level is matched to your
-              background and track record.
+              Teams are multi-disciplinary by design. We are augmented as needed with data scientists, technology architects, regulatory SMEs, and change management practitioners — all drawn from across Accenture&apos;s broader FS capability.
             </p>
           </div>
         </div>
 
-        {/* Career levels - horizontal timeline */}
-        <div className="relative">
-          {/* Progress line */}
-          <div className="absolute top-6 left-0 right-0 h-px bg-border hidden lg:block" />
-          <div className="absolute top-6 left-0 w-3/4 h-px bg-[#A100FF] hidden lg:block" />
-
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
-            {levels.map((level, index) => (
-              <FadeIn key={level.title} delay={index * 100}>
-                <div className="relative group">
-                  {/* Dot */}
-                  <div
-                    className={`w-3 h-3 rounded-full mb-6 hidden lg:block transition-transform duration-300 group-hover:scale-150 ${index < 4 ? "bg-[#A100FF]" : "bg-border"
-                      }`}
-                  />
-
-                  {/* Content */}
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-1 transition-colors duration-300 group-hover:text-[#A100FF]">
-                      {level.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">{level.desc}</p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+        {/* Career levels - horizontal layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
+          {levels.map((level, index) => (
+            <FadeIn key={level.title} delay={index * 100}>
+              <div className="relative group">
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-foreground mb-1 transition-colors duration-300 group-hover:text-[#A100FF]">
+                  {level.title}
+                </h3>
+                
+                {/* Role */}
+                <p className="text-sm font-medium text-[#A100FF] mb-3">{level.role}</p>
+                
+                {/* Description */}
+                <p className="text-sm text-muted-foreground leading-relaxed">{level.desc}</p>
+              </div>
+            </FadeIn>
+          ))}
         </div>
 
         {/* Quote with image */}

@@ -80,12 +80,11 @@ export function Hero() {
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
-                  { value: "500+", label: "UK&I consultants" },
+                  { value: "150+", label: "UKI Banking Consultants" },
                   { value: "40+", label: "Banking clients" },
                   { value: "6", label: "Practice areas" },
-                  { value: "£150m+", label: "BoE mandate" },
                 ].map((stat, index) => (
                   <FadeIn key={stat.label} delay={index * 100} direction="up">
                     <div className="border-l-2 border-[#A100FF] pl-4 hover-lift">
