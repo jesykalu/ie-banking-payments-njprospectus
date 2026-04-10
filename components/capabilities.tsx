@@ -12,25 +12,25 @@ const capabilities = [
   },
   {
     id: "02",
-    title: "UK Payments Infrastructure",
-    description:
-      "Engaged by the Bank of England on RTGS renewal and New Payments Architecture through Pay.UK. Central to UK financial infrastructure.",
-  },
-  {
-    id: "03",
-    title: "Regulatory Response",
-    description:
-      "Navigating Basel 3.1, Consumer Duty, SM&CR reform, and PRA operational resilience. Regulatory imperatives driving sustained demand.",
-  },
-  {
-    id: "04",
-    title: "AI & Data Transformation",
+    title: "AI & Data",
     description:
       "Deploying AI-driven credit decisioning, fraud detection, and customer analytics using Accenture AI Refinery and FinForge accelerators.",
   },
   {
+    id: "03",
+    title: "Payments Strategy",
+    description:
+      "Engaged by the Bank of England on RTGS renewal and New Payments Architecture through Pay.UK. Central to UK financial infrastructure.",
+  },
+  {
+    id: "04",
+    title: "UK Regulatory Response (PRA/FCA)",
+    description:
+      "Navigating Basel 3.1, Consumer Duty, SM&CR reform, and PRA operational resilience. Regulatory imperatives driving sustained demand.",
+  },
+  {
     id: "05",
-    title: "Digital Banking & CX",
+    title: "Digital CX",
     description:
       "Redesigning end-to-end digital propositions for UK retail banks. Journey reimagination in partnership with Accenture Song.",
   },
