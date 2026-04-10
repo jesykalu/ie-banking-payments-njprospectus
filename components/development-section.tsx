@@ -43,7 +43,7 @@ export function DevelopmentSection() {
           </div>
           
           {/* Content */}
-          <div className="relative py-10 lg:py-14 px-8 lg:px-12">
+          <div className="relative py-16 lg:py-24 px-8 lg:px-12">
             <p className="text-xs uppercase tracking-[0.2em] text-white/70 mb-4">
               Development
             </p>
