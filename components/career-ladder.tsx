@@ -43,7 +43,7 @@ export function CareerLadder() {
             Career Levels
           </p>
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
-            The consulting career ladder.
+            The consulting career path.
           </h2>
         </div>
 

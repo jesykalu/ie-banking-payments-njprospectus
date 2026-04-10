@@ -32,7 +32,7 @@ const reasons = [
     id: "05",
     title: "A clear and meritocratic path",
     description:
-      "The career ladder is transparent, the meritocracy is real, and London's profile within Accenture globally means strong performers gain visibility well beyond the UK market.",
+      "The career path is transparent, the meritocracy is real, and London's profile within Accenture globally means strong performers gain visibility well beyond the UK market.",
   },
   {
     id: "06",

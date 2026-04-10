@@ -22,7 +22,7 @@ export function CareerSection() {
               A clear and meritocratic path.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              The career ladder runs from Analyst through to Managing Director. 
+              The career path runs from Analyst through to Managing Director. 
               The system is meritocratic — the best people advance ahead of their 
               peer group. For experienced hires, entry level is matched to your 
               background and track record.
