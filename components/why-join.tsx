@@ -51,7 +51,7 @@ export function WhyJoin() {
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
             Why Join Us
           </p>
-          <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-3xl leading-tight">
+          <h2 className="text-3xl lg:text-5xl font-bold text-foreground leading-tight text-balance">
             The UK banks that will define the next decade are rebuilding themselves right now — new cores, new data foundations, new regulatory frameworks. Accenture is shaping that rebuilding. There is no better seat in UK banking consulting.
           </h2>
         </div>
