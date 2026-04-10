@@ -16,9 +16,7 @@ export function CTASection() {
             Let there be change.
           </h2>
           <p className="text-lg text-white/70 leading-relaxed mb-10 max-w-2xl mx-auto">
-            The UK banks that will define the next decade are rebuilding themselves 
-            right now. Accenture is shaping that rebuilding. If this sounds like 
-            the right next step, we&apos;d like to hear from you.
+            Accenture is at the centre of UK banking's transformation. There's no better place to be.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
