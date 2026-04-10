@@ -24,9 +24,9 @@ export function CareerSection() {
               A clear and meritocratic path.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              The career path runs from Analyst through to Managing Director. 
-              The system is meritocratic — the best people advance ahead of their 
-              peer group. For experienced hires, entry level is matched to your 
+              The career path runs from Analyst through to Managing Director.
+              The system is meritocratic — the best people advance ahead of their
+              peer group. For experienced hires, entry level is matched to your
               background and track record.
             </p>
           </div>
@@ -44,9 +44,8 @@ export function CareerSection() {
                 <div className="relative group">
                   {/* Dot */}
                   <div
-                    className={`w-3 h-3 rounded-full mb-6 hidden lg:block transition-transform duration-300 group-hover:scale-150 ${
-                      index < 4 ? "bg-[#A100FF]" : "bg-border"
-                    }`}
+                    className={`w-3 h-3 rounded-full mb-6 hidden lg:block transition-transform duration-300 group-hover:scale-150 ${index < 4 ? "bg-[#A100FF]" : "bg-border"
+                      }`}
                   />
 
                   {/* Content */}
@@ -68,11 +67,11 @@ export function CareerSection() {
             <FadeIn direction="right">
               <div>
                 <blockquote className="text-2xl lg:text-3xl font-medium text-foreground leading-relaxed">
-                  &quot;The system is meritocratic. The best people advance ahead of 
+                  &quot;The system is meritocratic. The best people advance ahead of
                   their peer group, and that&apos;s consistent across the practice.&quot;
                 </blockquote>
                 <p className="text-muted-foreground mt-6">
-                  — UK Banking Practice Leadership
+                  — Anna McKinven - UK Banking Practice Leadership
                 </p>
               </div>
             </FadeIn>
