@@ -1,123 +1,77 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-
-const careerLevels = [
-  { level: "Analyst", duration: "~2 years at level", color: "from-[#A100FF]/20 to-[#A100FF]/5" },
-  { level: "Consultant", duration: "~2–3 years at level", color: "from-[#A100FF]/30 to-[#A100FF]/10" },
-  { level: "Manager", duration: "~3–4 years at level", color: "from-[#A100FF]/40 to-[#A100FF]/15" },
-  { level: "Senior Manager", duration: "~3–5 years at level", color: "from-[#A100FF]/50 to-[#A100FF]/20" },
-]
-
-function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
-  const [count, setCount] = useState(0)
-  const ref = useRef<HTMLDivElement>(null)
-  const hasAnimated = useRef(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true
-          let start = 0
-          const increment = target / 50
-          const timer = setInterval(() => {
-            start += increment
-            if (start >= target) {
-              setCount(target)
-              clearInterval(timer)
-            } else {
-              setCount(Math.floor(start))
-            }
-          }, 30)
-        }
-      },
-      { threshold: 0.5 }
-    )
-
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => observer.disconnect()
-  }, [target])
-
-  return (
-    <div ref={ref} className="text-4xl lg:text-5xl font-bold text-[#A100FF]">
-      ~{count}
-      {suffix}
-    </div>
-  )
-}
+const levels = [
+  { title: "Analyst", years: "~2 years", desc: "Foundation building" },
+  { title: "Consultant", years: "~2-3 years", desc: "Growing expertise" },
+  { title: "Manager", years: "~3-4 years", desc: "Leading workstreams" },
+  { title: "Senior Manager", years: "~3-5 years", desc: "Owning relationships" },
+  { title: "Managing Director", years: "Partnership", desc: "Practice leadership" },
+];
 
 export function CareerSection() {
   return (
-    <section id="career" className="py-24 lg:py-32 bg-gradient-to-b from-white via-[#A100FF]/[0.02] to-white relative">
+    <section id="career" className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <span className="inline-block text-sm text-[#A100FF] font-medium tracking-wide uppercase mb-4">
-            Your career
-          </span>
-          <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            A clear and meritocratic path.
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            The career ladder in S&C runs from Analyst through Consultant, Manager, 
-            and Senior Manager to Managing Director. The system is meritocratic — the 
-            best people advance ahead of their peer group, and that&apos;s consistent 
-            across the practice. For experienced hires, entry level is matched to your 
-            background and track record. We&apos;ll be direct with you about where you&apos;d 
-            come in and what the path forward looks like.
+        <div className="mb-16 lg:mb-24">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+            Your Career
           </p>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground leading-tight">
+              A clear and meritocratic path.
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              The career ladder runs from Analyst through to Managing Director. 
+              The system is meritocratic — the best people advance ahead of their 
+              peer group. For experienced hires, entry level is matched to your 
+              background and track record.
+            </p>
+          </div>
         </div>
 
-        {/* Career level cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {careerLevels.map((item, index) => (
-            <div
-              key={item.level}
-              className="relative group"
-            >
-              <div className={`
-                relative p-6 lg:p-8 rounded-2xl border border-border bg-white shadow-sm
-                hover:border-[#A100FF]/30 hover:shadow-md hover:shadow-[#A100FF]/5 transition-all duration-300
-              `}>
-                {/* Level number */}
-                <div className="absolute top-4 right-4 text-xs font-mono text-muted-foreground">
-                  0{index + 1}
-                </div>
-                
-                {/* Animated counter */}
-                <AnimatedCounter target={index === 0 ? 2 : index === 1 ? 3 : index === 2 ? 4 : 5} />
-                
-                <div className="text-sm text-muted-foreground mt-2 mb-4">
-                  years at level
-                </div>
-                
-                <h3 className="text-xl font-semibold text-foreground">
-                  {item.level}
-                </h3>
+        {/* Career levels - horizontal timeline */}
+        <div className="relative">
+          {/* Progress line */}
+          <div className="absolute top-6 left-0 right-0 h-px bg-border hidden lg:block" />
+          <div className="absolute top-6 left-0 w-3/4 h-px bg-[#A100FF] hidden lg:block" />
 
-                {/* Progress bar */}
-                <div className="mt-4 h-1 bg-border rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-[#A100FF] rounded-full transition-all duration-1000"
-                    style={{ width: `${(index + 1) * 25}%` }}
-                  />
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
+            {levels.map((level, index) => (
+              <div key={level.title} className="relative">
+                {/* Dot */}
+                <div
+                  className={`w-3 h-3 rounded-full mb-6 hidden lg:block ${
+                    index < 4 ? "bg-[#A100FF]" : "bg-border"
+                  }`}
+                />
+
+                {/* Content */}
+                <div>
+                  <p className="text-sm text-[#A100FF] font-medium mb-1">
+                    {level.years}
+                  </p>
+                  <h3 className="text-lg font-semibold text-foreground mb-1">
+                    {level.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{level.desc}</p>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        {/* Meritocracy statement */}
-        <div className="text-center">
-          <p className="text-muted-foreground text-lg italic">
-            &quot;The system is meritocratic. The best people advance ahead of their peer group.&quot;
+        {/* Quote */}
+        <div className="mt-16 lg:mt-24 pt-16 border-t border-border">
+          <blockquote className="text-2xl lg:text-3xl font-medium text-foreground max-w-3xl leading-relaxed">
+            &quot;The system is meritocratic. The best people advance ahead of 
+            their peer group, and that&apos;s consistent across the practice.&quot;
+          </blockquote>
+          <p className="text-muted-foreground mt-6">
+            — UK Banking Practice Leadership
           </p>
         </div>
       </div>
     </section>
-  )
+  );
 }

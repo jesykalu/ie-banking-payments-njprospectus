@@ -3,54 +3,46 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Accenture Purple: #A100FF - Premium Light Theme */
+/* Modern Reinvention Hub - Accenture Purple #A100FF */
 :root {
-  --background: oklch(0.995 0 0);
-  --foreground: oklch(0.15 0.01 285);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.01 285);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.12 0 0);
+  --card: oklch(0.98 0 0);
+  --card-foreground: oklch(0.12 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.01 285);
-  --primary: oklch(0.50 0.28 303);
+  --popover-foreground: oklch(0.12 0 0);
+  --primary: oklch(0.12 0 0);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.97 0.005 285);
-  --secondary-foreground: oklch(0.15 0.01 285);
-  --muted: oklch(0.96 0.005 285);
-  --muted-foreground: oklch(0.45 0.01 285);
-  --accent: oklch(0.50 0.28 303);
+  --secondary: oklch(0.96 0 0);
+  --secondary-foreground: oklch(0.12 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.55 0.28 303);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.005 285);
-  --input: oklch(0.96 0.005 285);
-  --ring: oklch(0.50 0.28 303);
-  --chart-1: oklch(0.50 0.28 303);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.75rem;
-  --sidebar: oklch(0.98 0 0);
-  --sidebar-foreground: oklch(0.15 0.01 285);
-  --sidebar-primary: oklch(0.50 0.28 303);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.96 0.005 285);
-  --sidebar-accent-foreground: oklch(0.15 0.01 285);
-  --sidebar-border: oklch(0.92 0.005 285);
-  --sidebar-ring: oklch(0.50 0.28 303);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.90 0 0);
+  --input: oklch(0.96 0 0);
+  --ring: oklch(0.55 0.28 303);
+  --chart-1: oklch(0.55 0.28 303);
+  --chart-2: oklch(0.12 0 0);
+  --chart-3: oklch(0.45 0 0);
+  --chart-4: oklch(0.70 0 0);
+  --chart-5: oklch(0.85 0 0);
+  --radius: 0.5rem;
   
   /* Accenture specific */
   --accenture-purple: #A100FF;
-  --accenture-purple-light: oklch(0.65 0.22 303);
-  --accenture-purple-dark: oklch(0.40 0.28 303);
+  --accenture-dark: #0D0D0D;
+  --accenture-gray: #6B6B6B;
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Geist', 'Geist Fallback', sans-serif;
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-inter), 'Inter', 'Geist', sans-serif;
+  --font-mono: var(--font-mono), 'Geist Mono', monospace;
   --color-accenture-purple: var(--accenture-purple);
-  --color-accenture-purple-light: var(--accenture-purple-light);
-  --color-accenture-purple-dark: var(--accenture-purple-dark);
+  --color-accenture-dark: var(--accenture-dark);
+  --color-accenture-gray: var(--accenture-gray);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -75,18 +67,10 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
 }
 
 @layer base {
@@ -94,6 +78,17 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: #A100FF;
+  color: white;
 }

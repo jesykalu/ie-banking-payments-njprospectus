@@ -1,118 +1,113 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { cn } from "@/lib/utils"
+import { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 
 const capabilities = [
   {
-    number: "01",
-    title: "Core banking modernisation",
+    id: "01",
+    title: "Core Banking Modernisation",
     description:
-      "Supporting major UK retail banks through multi-year migrations to cloud-native architecture — vendor selection, business case, architecture blueprint, and phased delivery. Thought Machine Vault and Mambu are at the centre of several live programmes right now. This is genuinely complex, high-stakes work, and Accenture is leading it.",
+      "Supporting major UK retail banks through multi-year migrations to cloud-native architecture. Thought Machine Vault and Mambu implementations at scale.",
   },
   {
-    number: "02",
-    title: "UK payments infrastructure",
+    id: "02",
+    title: "UK Payments Infrastructure",
     description:
-      "Accenture has been engaged by the Bank of England on the renewal of the UK's Real-Time Gross Settlement system — a programme worth up to £150 million — and on New Payments Architecture work through Pay.UK. There are few mandates more central to UK financial infrastructure than these.",
+      "Engaged by the Bank of England on RTGS renewal and New Payments Architecture through Pay.UK. Central to UK financial infrastructure.",
   },
   {
-    number: "03",
-    title: "Regulatory response",
+    id: "03",
+    title: "Regulatory Response",
     description:
-      "Helping UK banks navigate Basel 3.1 (final rules published early 2026, effective January 2027), Consumer Duty embedding, SM&CR reform, and the PRA's operational incident reporting framework. These aren't discretionary projects — they're regulatory imperatives, which means sustained, high-quality demand.",
+      "Navigating Basel 3.1, Consumer Duty, SM&CR reform, and PRA operational resilience. Regulatory imperatives driving sustained demand.",
   },
   {
-    number: "04",
-    title: "AI & data transformation",
+    id: "04",
+    title: "AI & Data Transformation",
     description:
-      "Deploying AI-driven credit decisioning, fraud detection, and customer analytics using Accenture's AI Refinery and FinForge accelerators. As UK banks accelerate GenAI adoption, the demand for credible strategy and implementation advisory is significant — and growing.",
+      "Deploying AI-driven credit decisioning, fraud detection, and customer analytics using Accenture AI Refinery and FinForge accelerators.",
   },
   {
-    number: "05",
-    title: "Digital banking & CX",
+    id: "05",
+    title: "Digital Banking & CX",
     description:
-      "Redesigning the end-to-end digital proposition for UK retail banks — proposition design, customer journey reimagination, and the commercial case for platform investment — often working in close partnership with Accenture Song.",
+      "Redesigning end-to-end digital propositions for UK retail banks. Journey reimagination in partnership with Accenture Song.",
   },
   {
-    number: "06",
-    title: "Operating model & cost",
+    id: "06",
+    title: "Operating Model & Cost",
     description:
-      "Delivering 20–25% cost reduction programmes through process redesign, AI-enabled automation, and organisational restructuring. In a UK environment of sustained margin pressure, these mandates are a constant.",
+      "Delivering 20-25% cost reduction through process redesign, AI automation, and organisational restructuring.",
   },
-]
+];
 
 export function Capabilities() {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <section id="practice" className="py-24 lg:py-32 relative">
+    <section id="capabilities" className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="mb-16">
-          <span className="inline-block text-sm text-[#A100FF] font-medium tracking-wide uppercase mb-4">
-            The practice
-          </span>
-          <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Where we work. What we do.
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
-            The UK&I Banking practice sits within Financial Services S&C, part of 
-            Accenture&apos;s Reinvention Services unit. Work is organised across both 
-            client segments and capability domains — which means you build genuine 
-            depth in a client, a topic, or both.
+        <div className="mb-16 lg:mb-24">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+            What We Do
           </p>
+          <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
+            Six practice areas driving transformation.
+          </h2>
         </div>
 
-        {/* Capabilities grid */}
-        <div className="grid lg:grid-cols-2 gap-6">
-          {capabilities.map((capability, index) => (
+        {/* Capabilities list */}
+        <div className="border-t border-border">
+          {capabilities.map((capability) => (
             <div
-              key={capability.number}
-              className={cn(
-                "group relative p-6 lg:p-8 rounded-2xl border transition-all duration-300 cursor-pointer shadow-sm",
-                activeIndex === index
-                  ? "bg-white border-[#A100FF]/30 shadow-md shadow-[#A100FF]/5"
-                  : "bg-white/80 border-border hover:border-[#A100FF]/20 hover:shadow-md hover:shadow-[#A100FF]/5"
-              )}
-              onMouseEnter={() => setActiveIndex(index)}
+              key={capability.id}
+              className="group border-b border-border py-8 lg:py-10 cursor-pointer transition-colors hover:bg-secondary/30"
+              onMouseEnter={() => setHoveredId(capability.id)}
+              onMouseLeave={() => setHoveredId(null)}
             >
-              {/* Number indicator */}
-              <div className="flex items-start gap-4 mb-4">
+              <div className="flex items-start gap-6 lg:gap-12">
+                {/* Number */}
                 <span
-                  className={cn(
-                    "text-sm font-mono transition-colors duration-300",
-                    activeIndex === index ? "text-[#A100FF]" : "text-muted-foreground"
-                  )}
+                  className={`text-sm font-mono transition-colors duration-300 ${
+                    hoveredId === capability.id
+                      ? "text-[#A100FF]"
+                      : "text-muted-foreground"
+                  }`}
                 >
-                  {capability.number}
+                  {capability.id}
                 </span>
-                <div className="flex-1">
+
+                {/* Content */}
+                <div className="flex-1 grid lg:grid-cols-2 gap-4 lg:gap-12">
                   <h3
-                    className={cn(
-                      "text-xl font-semibold mb-3 transition-colors duration-300",
-                      activeIndex === index ? "text-foreground" : "text-foreground/90"
-                    )}
+                    className={`text-xl lg:text-2xl font-semibold transition-colors duration-300 ${
+                      hoveredId === capability.id
+                        ? "text-foreground"
+                        : "text-foreground/80"
+                    }`}
                   >
                     {capability.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
+                  <p className="text-muted-foreground leading-relaxed">
                     {capability.description}
                   </p>
                 </div>
-              </div>
 
-              {/* Accent line */}
-              <div
-                className={cn(
-                  "absolute left-0 top-6 bottom-6 w-0.5 rounded-full transition-all duration-300",
-                  activeIndex === index ? "bg-[#A100FF]" : "bg-transparent"
-                )}
-              />
+                {/* Arrow */}
+                <ArrowUpRight
+                  className={`w-5 h-5 transition-all duration-300 ${
+                    hoveredId === capability.id
+                      ? "text-[#A100FF] translate-x-1 -translate-y-1"
+                      : "text-muted-foreground/30"
+                  }`}
+                />
+              </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

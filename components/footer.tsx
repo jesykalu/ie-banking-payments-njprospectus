@@ -1,114 +1,114 @@
-"use client"
+"use client";
 
-const footerLinks = {
+import Link from "next/link";
+
+const links = {
   practice: [
-    { label: "About Accenture UK&I", href: "#about" },
-    { label: "The Banking Practice", href: "#practice" },
-    { label: "Our Work", href: "#work" },
-  ],
-  career: [
-    { label: "Life in the Practice", href: "#life" },
+    { label: "What We Do", href: "#capabilities" },
+    { label: "How We Work", href: "#work" },
     { label: "Your Career", href: "#career" },
-    { label: "Why Join Us", href: "#why-join" },
   ],
-  legal: [
-    { label: "Privacy", href: "#" },
-    { label: "Terms", href: "#" },
+  company: [
+    { label: "About Accenture", href: "#" },
+    { label: "UK&I Operations", href: "#" },
     { label: "Contact", href: "#" },
   ],
-}
+};
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-gradient-to-b from-white to-[#A100FF]/[0.03]">
+    <footer className="border-t border-border bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
-          {/* Brand column */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="mb-4">
-              <span className="text-lg font-semibold text-foreground">
-                Accenture S&C Banking
-              </span>
-              <span className="block text-sm text-muted-foreground mt-1">
-                UK & Ireland
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand */}
+          <div className="col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-[#A100FF] font-bold">{">"}</span>
+              <span className="font-semibold text-foreground">
+                Accenture Banking
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              The banking practice for the work that matters most.
+              Strategy & Consulting
+              <br />
+              UK & Ireland
             </p>
           </div>
 
           {/* Practice links */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
               Practice
-            </h4>
+            </p>
             <ul className="space-y-3">
-              {footerLinks.practice.map((link) => (
+              {links.practice.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-[#A100FF] transition-colors"
+                    className="text-sm text-foreground hover:text-[#A100FF] transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Career links */}
+          {/* Company links */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">
-              Career
-            </h4>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              Company
+            </p>
             <ul className="space-y-3">
-              {footerLinks.career.map((link) => (
+              {links.company.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-[#A100FF] transition-colors"
+                    className="text-sm text-foreground hover:text-[#A100FF] transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Legal links */}
+          {/* Legal */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
               Legal
-            </h4>
+            </p>
             <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-[#A100FF] transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-foreground hover:text-[#A100FF] transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-foreground hover:text-[#A100FF] transition-colors"
+                >
+                  Terms of Use
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Bottom */}
+        <div className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            April 2026 · For discussion purposes only
+            2026 Accenture. All rights reserved.
           </p>
-          <div className="flex items-center gap-1">
-            <span className="w-2 h-2 rounded-full bg-[#A100FF]" />
-            <span className="text-xs text-muted-foreground">
-              Accenture Strategy & Consulting
-            </span>
-          </div>
+          <p className="text-xs text-muted-foreground">
+            Candidate Prospectus - For discussion purposes only
+          </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -1,101 +1,101 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Menu, X, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "The Practice", href: "#practice" },
-  { label: "Our Work", href: "#work" },
-  { label: "Life Here", href: "#life" },
+  { label: "What We Do", href: "#capabilities" },
+  { label: "How We Work", href: "#work" },
   { label: "Your Career", href: "#career" },
-  { label: "Why Join", href: "#why-join" },
-]
+  { label: "Why Join", href: "#join" },
+];
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-white/90 backdrop-blur-xl border-b border-border shadow-sm"
-          : "bg-white/50 backdrop-blur-sm"
+        isScrolled ? "bg-white border-b border-border" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <span className="text-lg font-semibold text-foreground tracking-tight">
+          <Link href="/" className="flex items-center gap-2">
+            <span className="text-[#A100FF] font-bold text-lg">{">"}</span>
+            <span className="font-semibold text-foreground tracking-tight">
               Accenture Banking
             </span>
-          </a>
+          </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
+              <Link
+                key={link.label}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Button
-              className="bg-[#A100FF] hover:bg-[#A100FF]/90 text-white font-medium px-5"
-            >
-              Get in touch
+          {/* CTA */}
+          <div className="hidden lg:flex items-center">
+            <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 text-sm">
+              Start a Conversation
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden p-2"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-border">
-          <div className="px-6 py-4 space-y-4">
+        <div className="lg:hidden bg-white border-b border-border">
+          <div className="px-6 py-6 space-y-4">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
+              <Link
+                key={link.label}
                 href={link.href}
-                className="block text-base text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-lg text-foreground"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <Button className="w-full bg-[#A100FF] hover:bg-[#A100FF]/90 text-white font-medium mt-4">
-              Get in touch
+            <Button className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-full mt-4">
+              Start a Conversation
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
         </div>
       )}
     </nav>
-  )
+  );
 }
