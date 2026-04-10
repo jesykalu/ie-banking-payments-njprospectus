@@ -1,5 +1,7 @@
 "use client";
 
+import { AnimatedCounter } from "./animated-counter";
+
 const qualifications = [
   {
     category: "Banking & Finance",
@@ -42,7 +44,9 @@ export function DevelopmentSection() {
                 development globally. In the UK Banking practice, that translates 
                 into structured support for credentials that matter.
               </p>
-              <p className="text-4xl font-bold text-[#A100FF]">$1bn+</p>
+              <p className="text-4xl font-bold text-[#A100FF]">
+                $<AnimatedCounter end={1} duration={2000} suffix="bn+" />
+              </p>
               <p className="text-sm text-muted-foreground">
                 Annual global L&D investment
               </p>

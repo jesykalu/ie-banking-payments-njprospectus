@@ -1,5 +1,7 @@
 "use client";
 
+import { AnimatedCounter } from "./animated-counter";
+
 const offices = [
   { city: "London", role: "HQ", people: "~8,000" },
   { city: "Manchester", role: "Regional Hub", people: "~2,500" },
@@ -45,15 +47,21 @@ export function GlobalSection() {
             {/* Key stats */}
             <div className="grid grid-cols-3 gap-8">
               <div>
-                <p className="text-4xl lg:text-5xl font-bold text-[#A100FF]">~15k</p>
+                <p className="text-4xl lg:text-5xl font-bold text-[#A100FF]">
+                  ~<AnimatedCounter end={15} duration={2000} suffix="k" />
+                </p>
                 <p className="text-sm text-background/50 mt-2">Accenture employees across UK&I</p>
               </div>
               <div>
-                <p className="text-4xl lg:text-5xl font-bold text-[#A100FF]">~150</p>
+                <p className="text-4xl lg:text-5xl font-bold text-[#A100FF]">
+                  ~<AnimatedCounter end={150} duration={2000} />
+                </p>
                 <p className="text-sm text-background/50 mt-2">S&C Banking Practitioners</p>
               </div>
               <div>
-                <p className="text-4xl lg:text-5xl font-bold text-[#A100FF]">22</p>
+                <p className="text-4xl lg:text-5xl font-bold text-[#A100FF]">
+                  <AnimatedCounter end={22} duration={2000} />
+                </p>
                 <p className="text-sm text-background/50 mt-2">FT Gold Ratings (incl. Financial Services)</p>
               </div>
             </div>
