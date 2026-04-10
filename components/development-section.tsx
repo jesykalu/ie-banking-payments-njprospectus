@@ -27,10 +27,10 @@ const qualifications = [
 
 export function DevelopmentSection() {
   return (
-    <section className="pt-8 lg:pt-12 pb-16 lg:pb-24 bg-white">
+    <section className="pt-6 lg:pt-8 pb-12 lg:pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header with background image */}
-        <div className="relative mb-16 lg:mb-24 rounded-xl overflow-hidden">
+        <div className="relative mb-10 lg:mb-14 rounded-xl overflow-hidden">
           {/* Background image */}
           <div className="absolute inset-0">
             <img
@@ -43,7 +43,7 @@ export function DevelopmentSection() {
           </div>
           
           {/* Content */}
-          <div className="relative py-16 lg:py-24 px-8 lg:px-12">
+          <div className="relative py-10 lg:py-14 px-8 lg:px-12">
             <p className="text-xs uppercase tracking-[0.2em] text-white/70 mb-4">
               Development
             </p>

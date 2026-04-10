@@ -31,10 +31,10 @@ const projects = [
 
 export function OurWork() {
   return (
-    <section id="our-work" className="py-16 lg:py-24 bg-secondary/30">
+    <section id="our-work" className="py-12 lg:py-16 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="mb-16 lg:mb-20">
+        <div className="mb-10 lg:mb-12">
           <FadeIn>
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
               Our Work

@@ -4,7 +4,7 @@ import { FadeIn } from "@/components/fade-in";
 
 export function TrainingDevelopment() {
   return (
-    <section id="training" className="pt-16 lg:pt-24 pb-8 lg:pb-12 bg-muted/30">
+    <section id="training" className="pt-12 lg:pt-16 pb-6 lg:pb-8 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div>
