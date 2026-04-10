@@ -1,7 +1,6 @@
 "use client";
 
 import { FadeIn } from "@/components/fade-in";
-import { useEffect, useRef, useState } from "react";
 
 const levels = [
   { title: "Analyst", desc: "Foundation building" },
@@ -12,37 +11,8 @@ const levels = [
 ];
 
 export function CareerSection() {
-  const [progress, setProgress] = useState(0);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      
-      const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      // Calculate progress based on how much of the section is visible
-      const sectionTop = rect.top;
-      const sectionHeight = rect.height;
-      
-      // Start animation when section enters viewport
-      if (sectionTop < windowHeight && rect.bottom > 0) {
-        const visibleStart = Math.max(0, windowHeight - sectionTop);
-        const totalVisible = windowHeight + sectionHeight * 0.5;
-        const progressPercent = Math.min(100, (visibleStart / totalVisible) * 100);
-        setProgress(progressPercent);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check
-    
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <section id="career" className="py-24 lg:py-32 bg-white" ref={sectionRef}>
+    <section id="career" className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-16 lg:mb-24">
@@ -62,55 +32,21 @@ export function CareerSection() {
           </div>
         </div>
 
-        {/* Career levels - horizontal timeline */}
-        <div className="relative">
-          {/* Background progress line */}
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-border hidden lg:block" />
-          
-          {/* Animated progress line */}
-          <div 
-            className="absolute bottom-0 left-0 h-px bg-[#A100FF] hidden lg:block transition-all duration-300 ease-out"
-            style={{ width: `${progress}%` }}
-          />
-          
-          {/* Animated ball */}
-          <div 
-            className="absolute bottom-0 -translate-y-1/2 w-4 h-4 rounded-full bg-[#A100FF] hidden lg:block transition-all duration-300 ease-out shadow-lg shadow-[#A100FF]/50"
-            style={{ 
-              left: `${progress}%`,
-              transform: `translateX(-50%) translateY(50%)`,
-            }}
-          />
-
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4 pb-8">
-            {levels.map((level, index) => {
-              const levelProgress = (index / (levels.length - 1)) * 100;
-              const isActive = progress >= levelProgress;
-              
-              return (
-                <FadeIn key={level.title} delay={index * 100}>
-                  <div className="relative group h-full flex flex-col">
-                    {/* Title - fixed height to align */}
-                    <h3 className={`text-lg font-semibold transition-colors duration-300 group-hover:text-[#A100FF] min-h-[56px] lg:min-h-[28px] ${isActive ? "text-foreground" : "text-muted-foreground"}`}>
-                      {level.title}
-                    </h3>
-                    
-                    {/* Description - fixed height to align */}
-                    <p className="text-sm text-muted-foreground min-h-[40px] mb-6">{level.desc}</p>
-                    
-                    {/* Dot underneath - pushed to bottom */}
-                    <div className="mt-auto">
-                      <div
-                        className={`w-3 h-3 rounded-full hidden lg:block transition-all duration-300 group-hover:scale-150 ${
-                          isActive ? "bg-[#A100FF]" : "bg-border"
-                        }`}
-                      />
-                    </div>
-                  </div>
-                </FadeIn>
-              );
-            })}
-          </div>
+        {/* Career levels - horizontal layout */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
+          {levels.map((level, index) => (
+            <FadeIn key={level.title} delay={index * 100}>
+              <div className="relative group">
+                {/* Title */}
+                <h3 className="text-lg font-semibold text-foreground mb-2 transition-colors duration-300 group-hover:text-[#A100FF]">
+                  {level.title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-sm text-muted-foreground">{level.desc}</p>
+              </div>
+            </FadeIn>
+          ))}
         </div>
 
         {/* Quote with image */}
