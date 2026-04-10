@@ -59,9 +59,18 @@ export function GlobalSection() {
             </div>
           </div>
 
-          {/* Right: Offices */}
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-background/50 mb-6">
+          {/* Right: Image and Offices */}
+          <div className="space-y-8">
+            {/* Canary Wharf Image */}
+            <div className="relative overflow-hidden rounded-xl aspect-[16/9]">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/990909558-9FUZz9L4LGu88jK1iQJAJdJHLhAYub.jpg"
+                alt="Professional working with tablet in London's Canary Wharf financial district at night"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <p className="text-xs uppercase tracking-[0.2em] text-background/50">
               Our Locations
             </p>
             <div className="space-y-4">
