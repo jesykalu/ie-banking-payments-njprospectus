@@ -44,58 +44,55 @@ const reasons = [
 
 export function WhyJoin() {
   return (
-    <section id="join" className="py-24 lg:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="join" className="relative py-24 lg:py-32 overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1216177466-MoqVpSs36SEfAGZoeQ2qp4GMkfguLv.jpg"
+          alt="Hand holding smartphone displaying financial charts with city bokeh background"
+          fill
+          className="object-cover"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/70" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-16 lg:mb-20">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+          <p className="text-xs uppercase tracking-[0.2em] text-white/60 mb-4">
             Why Join Us
           </p>
-          <h2 className="text-3xl lg:text-5xl font-bold text-foreground leading-tight text-balance">
+          <h2 className="text-3xl lg:text-5xl font-bold text-white leading-tight text-balance">
             The UK banks that will define the next decade are rebuilding themselves right now — new cores, new data foundations, new regulatory frameworks. Accenture is shaping that rebuilding. There is no better seat in UK banking consulting.
           </h2>
         </div>
 
-        {/* Two column layout: Image + Reasons */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Image */}
-          <div className="relative aspect-[4/3] lg:aspect-[3/4] overflow-hidden">
-            <Image
-              src="/images/team-collaboration.jpg"
-              alt="Accenture team collaborating in a modern office setting"
-              fill
-              className="object-cover"
-            />
-            {/* Subtle purple gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#A100FF]/20 via-transparent to-transparent" />
-          </div>
-
-          {/* Reasons list */}
-          <div className="space-y-0 divide-y divide-border">
-            {reasons.map((reason) => (
-              <div
-                key={reason.id}
-                className="group py-8 first:pt-0 last:pb-0 cursor-pointer"
-              >
-                <div className="flex items-start gap-6">
-                  <span className="text-sm font-mono text-[#A100FF] mt-1">
-                    {reason.id}
-                  </span>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-lg lg:text-xl font-semibold text-foreground group-hover:text-[#A100FF] transition-colors">
-                        {reason.title}
-                      </h3>
-                      <ArrowUpRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-[#A100FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {reason.description}
-                    </p>
+        {/* Reasons list - two columns */}
+        <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-8">
+          {reasons.map((reason) => (
+            <div
+              key={reason.id}
+              className="group py-6 border-t border-white/20 cursor-pointer"
+            >
+              <div className="flex items-start gap-6">
+                <span className="text-sm font-mono text-[#A100FF] mt-1">
+                  {reason.id}
+                </span>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-lg lg:text-xl font-semibold text-white group-hover:text-[#A100FF] transition-colors">
+                      {reason.title}
+                    </h3>
+                    <ArrowUpRight className="w-4 h-4 text-white/30 group-hover:text-[#A100FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </div>
+                  <p className="text-white/70 leading-relaxed">
+                    {reason.description}
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
