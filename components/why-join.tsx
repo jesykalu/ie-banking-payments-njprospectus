@@ -6,27 +6,39 @@ import Image from "next/image";
 const reasons = [
   {
     id: "01",
-    title: "The work is consequential",
+    title: "The most complex market in the world",
     description:
-      "UK banks are rebuilding core infrastructure, navigating generational regulatory shifts, and deploying AI at scale.",
+      "London gives you access to Tier 1 global banks, the Bank of England, world-class payments infrastructure, and one of the world's most active challenger ecosystems — all in one market. There are also opportunities to work for global clients.",
   },
   {
     id: "02",
-    title: "Strategy meets delivery",
+    title: "Strategy and delivery credibility",
     description:
-      "Pure-play boutiques hand off at the business case. Accenture stays through implementation, making your career more versatile.",
+      "Unlike pure-play strategy boutiques, Accenture holds both the strategy and the delivery. You don't just design the answer — you help build it. That dual credibility is rare and makes your career trajectory far more versatile.",
   },
   {
     id: "03",
     title: "The UK regulatory moment",
     description:
-      "Basel 3.1, Consumer Duty, NPA, SM&CR reform — the UK regulatory agenda is one of the busiest in a decade.",
+      "Basel 3.1, Consumer Duty, NPA, SM&CR reform, operational resilience — the UK regulatory agenda is one of the busiest in a decade. These mandates are not optional for UK banks.",
   },
   {
     id: "04",
-    title: "A transparent path",
+    title: "AI at the frontier",
     description:
-      "The career ladder is clear, the meritocracy is real. Strong performers gain visibility well beyond the UK market.",
+      "Accenture is investing $3 billion globally in AI with proprietary tools already deployed in UK banking engagements. Joining now means shaping what AI-native UK banking looks like.",
+  },
+  {
+    id: "05",
+    title: "A clear and meritocratic path",
+    description:
+      "The career ladder is transparent, the meritocracy is real, and London's profile within Accenture globally means strong performers gain visibility well beyond the UK market.",
+  },
+  {
+    id: "06",
+    title: "Community and culture",
+    description:
+      "People are at the core for our practice. We combine intellectual rigour with genuine collaborative culture — united by a shared passion for banking and the challenges it presents.",
   },
 ];
 
@@ -39,8 +51,8 @@ export function WhyJoin() {
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
             Why Join Us
           </p>
-          <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
-            Why Accenture Banking. Our honest answer.
+          <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-3xl leading-tight">
+            The UK banks that will define the next decade are rebuilding themselves right now — new cores, new data foundations, new regulatory frameworks. Accenture is shaping that rebuilding. There is no better seat in UK banking consulting.
           </h2>
         </div>
 
