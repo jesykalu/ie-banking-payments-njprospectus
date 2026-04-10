@@ -6,9 +6,9 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative">
+    <section className="relative pt-16 lg:pt-20">
       {/* Hero Image Section - Full bleed */}
-      <div className="relative h-[75vh] lg:h-[85vh] overflow-hidden">
+      <div className="relative h-[70vh] lg:h-[80vh] overflow-hidden">
         <Image
           src="/images/hero-bg.png"
           alt="Banking professional"
