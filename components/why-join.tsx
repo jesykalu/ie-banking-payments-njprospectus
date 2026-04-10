@@ -59,7 +59,7 @@ export function WhyJoin() {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="mb-16 lg:mb-20">
+        <div className="mb-12 lg:mb-16">
           <p className="text-xs uppercase tracking-[0.2em] text-white/60 mb-4">
             Why Join Us
           </p>
