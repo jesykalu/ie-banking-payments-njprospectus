@@ -25,12 +25,12 @@ export default function HomePage() {
       <Process />
       <GlobalSection />
       <CareerSection />
+      <PerformanceSection />
       <OurWork />
       <IntegrationsTicker />
       <WhyJoin />
       <DiversityInclusion />
       <DevelopmentSection />
-      <PerformanceSection />
       <CareerLadder />
       <CTASection />
       <Footer />
