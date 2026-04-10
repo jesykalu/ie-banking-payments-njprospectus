@@ -3,11 +3,31 @@
 import { FadeIn } from "@/components/fade-in";
 
 const levels = [
-  { title: "Analyst", desc: "Foundation building" },
-  { title: "Consultant", desc: "Growing expertise" },
-  { title: "Manager", desc: "Leading workstreams" },
-  { title: "Senior Manager", desc: "Owning relationships" },
-  { title: "Managing Director", desc: "Accenture leadership" },
+  { 
+    title: "Analyst", 
+    role: "Delivery foundation",
+    desc: "Data gathering, quantitative analysis, modelling, and content production. The quality of analyst output sets the quality ceiling for the entire team." 
+  },
+  { 
+    title: "Consultant", 
+    role: "Core workstream contributor",
+    desc: "Owns discrete analytical or design workstreams end-to-end. Conducts stakeholder interviews, develops deliverables. The level at which you build a visible banking specialism." 
+  },
+  { 
+    title: "Manager", 
+    role: "Workstream lead",
+    desc: "Manages day-to-day delivery: structures the work plan, coaches analysts and consultants, synthesises outputs. The pivot point between doing and leading." 
+  },
+  { 
+    title: "Senior Manager", 
+    role: "Engagement lead",
+    desc: "Day-to-day leadership of the engagement. Primary counterpart to Director/Head of level at the bank. Manages quality, team performance, and the weekly rhythm of delivery." 
+  },
+  { 
+    title: "Managing Director", 
+    role: "Account / engagement sponsor",
+    desc: "Owns the senior client relationship — typically ExCo or MD level at the bank. Shapes the commercial agreement, provides strategic oversight. Usually spans multiple concurrent engagements." 
+  },
 ];
 
 export function CareerSection() {
@@ -33,17 +53,20 @@ export function CareerSection() {
         </div>
 
         {/* Career levels - horizontal layout */}
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
           {levels.map((level, index) => (
             <FadeIn key={level.title} delay={index * 100}>
               <div className="relative group">
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-foreground mb-2 transition-colors duration-300 group-hover:text-[#A100FF]">
+                <h3 className="text-xl font-semibold text-foreground mb-1 transition-colors duration-300 group-hover:text-[#A100FF]">
                   {level.title}
                 </h3>
                 
+                {/* Role */}
+                <p className="text-sm font-medium text-[#A100FF] mb-3">{level.role}</p>
+                
                 {/* Description */}
-                <p className="text-sm text-muted-foreground">{level.desc}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{level.desc}</p>
               </div>
             </FadeIn>
           ))}
