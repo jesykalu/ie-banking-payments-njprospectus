@@ -15,7 +15,7 @@ export function DiversityInclusion() {
           </FadeIn>
           <FadeIn delay={100}>
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
-              Diversity & Inclusion
+              Our Events
             </h2>
           </FadeIn>
         </div>
