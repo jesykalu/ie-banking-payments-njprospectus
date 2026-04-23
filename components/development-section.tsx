@@ -34,8 +34,8 @@ export function DevelopmentSection() {
           {/* Background image */}
           <div className="absolute inset-0">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1200911287-ZZfjZrt3atGHfE2R4jpMKv0xEacSo8.jpg"
-              alt="Professional entering modern office building"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/994521488-6KwL6AKxD9Lw2AdOVBDVoZYEAZmtlm.jpg"
+              alt="Professional consultant standing in modern office with green plant walls"
               className="w-full h-full object-cover"
             />
             {/* Dark overlay for text readability */}
