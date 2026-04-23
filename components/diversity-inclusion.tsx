@@ -40,14 +40,16 @@ export function DiversityInclusion() {
   return (
     <section 
       id="diversity" 
-      className="relative py-12 lg:py-16"
-      style={{
-        backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/936444-xDc48UUQfNl5Ywd8wwC7VLVvPvQTln.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
+      className="relative py-12 lg:py-16 overflow-hidden"
     >
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/936444-xDc48UUQfNl5Ywd8wwC7VLVvPvQTln.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
       {/* Overlay for readability */}
       <div className="absolute inset-0 bg-slate-900/70" />
       
