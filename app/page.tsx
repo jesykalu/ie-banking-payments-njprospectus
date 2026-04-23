@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
-import { StatsTicker } from "@/components/stats-ticker"
+
 import { Capabilities } from "@/components/capabilities"
 import { Process } from "@/components/process"
 import { GlobalSection } from "@/components/global-section"
@@ -20,7 +20,6 @@ export default function HomePage() {
     <main className="min-h-screen bg-background">
       <Navbar />
       <Hero />
-      <StatsTicker />
       <Capabilities />
       <WhyJoin />
       <Process />
