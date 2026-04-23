@@ -48,8 +48,8 @@ export function WhyJoin() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1216177466-MoqVpSs36SEfAGZoeQ2qp4GMkfguLv.jpg"
-          alt="Hand holding smartphone displaying financial charts with city bokeh background"
+          src="/images/why-join-us.jpg"
+          alt="Diverse team of professionals collaborating around a table in a modern office with plants"
           fill
           className="object-cover"
         />
