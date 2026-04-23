@@ -9,7 +9,7 @@ import { OurWork } from "@/components/our-work"
 import { IntegrationsTicker } from "@/components/integrations-ticker"
 import { WhyJoin } from "@/components/why-join"
 import { DiversityInclusion } from "@/components/diversity-inclusion"
-import { DevelopmentSection } from "@/components/development-section"
+
 import { PerformanceSection } from "@/components/performance-section"
 
 import { CTASection } from "@/components/cta-section"
@@ -28,8 +28,6 @@ export default function HomePage() {
       <PerformanceSection />
       <OurWork />
       <IntegrationsTicker />
-      
-      <DevelopmentSection />
       <DiversityInclusion />
       <CTASection />
       <Footer />
