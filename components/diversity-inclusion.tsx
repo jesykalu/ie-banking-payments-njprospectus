@@ -45,7 +45,7 @@ export function DiversityInclusion() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/936444-xDc48UUQfNl5Ywd8wwC7VLVvPvQTln.jpg"
+          src="/images/events-background.jpg"
           alt=""
           className="w-full h-full object-cover"
         />
