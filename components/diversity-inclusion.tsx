@@ -102,18 +102,20 @@ export function DiversityInclusion() {
         {/* Navigation buttons */}
         <div className="flex items-center justify-end gap-3 mb-6">
           <button
+            type="button"
             onClick={() => scroll("left")}
-            className="p-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:bg-[#A100FF] group"
+            className="p-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:bg-[#A100FF] group cursor-pointer z-10"
             aria-label="Scroll left"
           >
-            <ChevronLeft className="w-5 h-5 text-slate-600 group-hover:text-white transition-colors" />
+            <ChevronLeft className="w-5 h-5 text-slate-600 group-hover:text-white transition-colors pointer-events-none" />
           </button>
           <button
+            type="button"
             onClick={() => scroll("right")}
-            className="p-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:bg-[#A100FF] group"
+            className="p-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:bg-[#A100FF] group cursor-pointer z-10"
             aria-label="Scroll right"
           >
-            <ChevronRight className="w-5 h-5 text-slate-600 group-hover:text-white transition-colors" />
+            <ChevronRight className="w-5 h-5 text-slate-600 group-hover:text-white transition-colors pointer-events-none" />
           </button>
         </div>
 
