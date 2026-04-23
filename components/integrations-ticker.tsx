@@ -23,12 +23,23 @@ const platforms = [
 
 export function IntegrationsTicker() {
   return (
-    <section className="py-12 lg:py-16 bg-secondary/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16">
-        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+    <section className="relative py-12 lg:py-16 overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/clients-background.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-slate-900/75" />
+      
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 mb-16">
+        <p className="text-xs uppercase tracking-[0.2em] text-slate-300 mb-4">
           Clients & Ecosystem
         </p>
-        <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
+        <h2 className="text-3xl lg:text-5xl font-bold text-white max-w-2xl leading-tight">
           Works with everything that matters in UK banking.
         </h2>
       </div>
@@ -38,14 +49,14 @@ export function IntegrationsTicker() {
         <div className="flex animate-scroll-left">
           {[...clients, ...clients, ...clients].map((client, index) => (
             <div key={`client-${index}`} className="shrink-0 mx-2">
-              <div className="px-6 py-3 border border-border bg-white text-sm font-medium text-foreground whitespace-nowrap">
+              <div className="px-6 py-3 border border-white/20 bg-white/10 backdrop-blur-sm text-sm font-medium text-white whitespace-nowrap">
                 {client}
               </div>
             </div>
           ))}
         </div>
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-secondary/30 to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-secondary/30 to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-900/75 to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-900/75 to-transparent z-10" />
       </div>
 
       {/* Platforms row */}
@@ -53,14 +64,14 @@ export function IntegrationsTicker() {
         <div className="flex animate-scroll-right">
           {[...platforms, ...platforms, ...platforms].map((platform, index) => (
             <div key={`platform-${index}`} className="shrink-0 mx-2">
-              <div className="px-6 py-3 border border-[#A100FF]/30 bg-[#A100FF]/5 text-sm font-medium text-[#A100FF] whitespace-nowrap">
+              <div className="px-6 py-3 border border-[#A100FF]/50 bg-[#A100FF]/20 backdrop-blur-sm text-sm font-medium text-white whitespace-nowrap">
                 {platform}
               </div>
             </div>
           ))}
         </div>
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-secondary/30 to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-secondary/30 to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-900/75 to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-900/75 to-transparent z-10" />
       </div>
 
       <style jsx>{`
