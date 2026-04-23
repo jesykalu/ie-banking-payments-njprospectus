@@ -48,7 +48,7 @@ export function Hero() {
       </div>
 
       {/* Content Section Below */}
-      <div className="bg-slate-800">
+      <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-28">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-8">
             {/* Left: Intro text */}

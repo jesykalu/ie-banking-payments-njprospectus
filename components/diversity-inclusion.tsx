@@ -4,7 +4,7 @@ import { FadeIn } from "@/components/fade-in";
 
 export function DiversityInclusion() {
   return (
-    <section id="diversity" className="py-12 lg:py-16 bg-muted/30">
+    <section id="diversity" className="py-12 lg:py-16 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-10 lg:mb-12">
