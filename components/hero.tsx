@@ -30,7 +30,7 @@ export function Hero() {
                 </p>
               </FadeIn>
               <FadeIn delay={400} duration={800}>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-6">
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] mb-6">
                   Where banking
                   <br />
                   meets <span className="text-[#A100FF]">Reinvention.</span>
