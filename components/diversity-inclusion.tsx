@@ -69,10 +69,12 @@ export function DiversityInclusion() {
         {/* Hero image */}
         <FadeIn delay={200}>
           <div className="relative overflow-hidden rounded-2xl aspect-[21/9] mb-12 image-zoom">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/936444-b02zOweTGUWBh4nZIXguY0JQnde2S7.jpg"
               alt="Hand creating colorful soap bubble against lush green forest backdrop"
               className="w-full h-full object-cover"
+              loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
           </div>
