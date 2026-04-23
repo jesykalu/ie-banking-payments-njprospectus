@@ -47,7 +47,7 @@ export function Capabilities() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <section id="capabilities" className="py-12 lg:py-16 bg-white">
+    <section id="capabilities" className="py-12 lg:py-16 bg-gradient-to-b from-slate-100 to-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-10 lg:mb-14">

@@ -12,7 +12,6 @@ import { DiversityInclusion } from "@/components/diversity-inclusion"
 import { DevelopmentSection } from "@/components/development-section"
 import { PerformanceSection } from "@/components/performance-section"
 
-import { TrainingDevelopment } from "@/components/training-development"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
 
@@ -30,7 +29,7 @@ export default function HomePage() {
       <PerformanceSection />
       <OurWork />
       <IntegrationsTicker />
-      <TrainingDevelopment />
+      
       <DevelopmentSection />
       <DiversityInclusion />
       <CTASection />

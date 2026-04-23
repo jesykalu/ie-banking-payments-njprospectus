@@ -9,8 +9,7 @@ const navLinks = [
   { label: "How We Work", href: "#work" },
   { label: "Your Career", href: "#career" },
   { label: "Our Work", href: "#our-work" },
-  { label: "Training & Development", href: "#training" },
-  { label: "Diversity & Inclusion", href: "#diversity" },
+  { label: "Our Events", href: "#diversity" },
 ];
 
 export function Navbar() {
@@ -18,7 +17,7 @@ export function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border"
+      className="fixed top-0 left-0 right-0 z-50 bg-slate-800/95 backdrop-blur-sm border-b border-slate-700/50"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -26,10 +25,10 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-2">
             <span className="text-[#A100FF] font-bold text-lg">{">"}</span>
             <div className="flex flex-col">
-              <span className="font-semibold text-foreground tracking-tight">
+              <span className="font-semibold text-white tracking-tight">
                 Accenture UKI Banking Practice
               </span>
-              <span className="text-xs text-muted-foreground italic">
+              <span className="text-xs text-slate-300 italic">
                 Candidate Prospectus
               </span>
             </div>
@@ -41,7 +40,7 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 underline-animation"
+                className="text-sm text-slate-300 hover:text-white transition-colors duration-300 underline-animation"
               >
                 {link.label}
               </Link>
@@ -56,9 +55,9 @@ export function Navbar() {
             className="lg:hidden p-2"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 text-white" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-6 h-6 text-white" />
             )}
           </button>
         </div>
@@ -66,14 +65,14 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-border">
+        <div className="lg:hidden bg-slate-800/95 backdrop-blur-sm border-b border-slate-700/50">
           <div className="px-6 py-6 space-y-4">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-lg text-foreground"
+                className="block text-lg text-white"
               >
                 {link.label}
               </Link>

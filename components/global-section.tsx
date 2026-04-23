@@ -12,7 +12,7 @@ const offices = [
 
 export function GlobalSection() {
   return (
-    <section className="py-12 lg:py-16 bg-foreground text-background">
+    <section className="py-12 lg:py-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left: Content */}
@@ -30,12 +30,12 @@ export function GlobalSection() {
               substantial presence in UK professional services.
             </p>
             <p className="text-lg text-background/70 leading-relaxed mb-6">
-              The S&C practice, led by Jonathan Keane (appointed UK, Ireland & Africa S&C 
+              The Industry and Enterprise UKI practice, led by Jonathan Keane (appointed UK, Ireland & Africa Industry and Enterprise UKI 
               lead in 2025), sits at the premium advisory end of that footprint.
             </p>
             <p className="text-lg text-background/70 leading-relaxed mb-6">
               Within Financial Services, Banking is the largest and most active practice area. 
-              The UK Banking S&C community runs into the hundreds of dedicated practitioners, 
+              The UK Banking Industry and Enterprise UKI community runs into the hundreds of dedicated practitioners, 
               with deep specialisms across retail, commercial, transaction banking, payments, and risk.
             </p>
             <p className="text-lg text-background/70 leading-relaxed mb-12">
@@ -56,7 +56,7 @@ export function GlobalSection() {
                 <p className="text-4xl lg:text-5xl font-bold text-[#A100FF]">
                   ~<AnimatedCounter end={150} duration={2000} />
                 </p>
-                <p className="text-sm text-background/50 mt-2">S&C Banking Practitioners</p>
+                <p className="text-sm text-background/50 mt-2">Industry and Enterprise UKI Banking Practitioners</p>
               </div>
               <div>
                 <p className="text-4xl lg:text-5xl font-bold text-[#A100FF]">
