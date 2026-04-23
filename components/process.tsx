@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Compass, Rocket, Users } from "lucide-react";
 
 const engagementTypes = [
   {
@@ -9,6 +10,7 @@ const engagementTypes = [
     duration: "6-16 weeks",
     description:
       "Diagnostic studies, target operating model design, regulatory impact assessments, vendor selection. Fast-paced, C-suite facing, high-visibility from day one.",
+    icon: Compass,
   },
   {
     id: "delivery",
@@ -16,6 +18,7 @@ const engagementTypes = [
     duration: "3 months - 3+ years",
     description:
       "From strategy into executable blueprint — business cases, architecture design, governance, mobilisation — through to full transformation execution.",
+    icon: Rocket,
   },
   {
     id: "advisory",
@@ -23,6 +26,7 @@ const engagementTypes = [
     duration: "Ongoing",
     description:
       "Standing advisory capacity — regulatory horizon scanning, strategic input, and programme oversight. Closest to senior client leadership.",
+    icon: Users,
   },
 ];
 
@@ -90,26 +94,60 @@ export function Process() {
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">
               Engagement Types
             </p>
-            <div className="space-y-4">
+            <div className="space-y-5">
               {engagementTypes.map((type) => (
                 <button
                   key={type.id}
                   onClick={() => setActiveType(type.id)}
-                  className={`w-full text-left p-6 border transition-all duration-300 ${
+                  className={`group relative w-full text-left p-7 rounded-2xl transition-all duration-500 ease-out overflow-hidden ${
                     activeType === type.id
-                      ? "border-[#A100FF] bg-white"
-                      : "border-border bg-white/50 hover:bg-white"
+                      ? "bg-gradient-to-br from-white via-white to-[#A100FF]/5 shadow-[0_8px_30px_rgb(161,0,255,0.12)] scale-[1.02]"
+                      : "bg-white/80 hover:bg-white shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:scale-[1.01]"
                   }`}
                 >
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-lg font-semibold text-foreground">
-                      {type.label}
-                    </h3>
-                    <span className="text-sm text-[#A100FF] font-medium">
-                      {type.duration}
-                    </span>
+                  {/* Active indicator line */}
+                  <div className={`absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl transition-all duration-500 ${
+                    activeType === type.id
+                      ? "bg-gradient-to-b from-[#A100FF] to-[#7B00CC]"
+                      : "bg-transparent group-hover:bg-slate-200"
+                  }`} />
+                  
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <div className="flex items-center gap-4">
+                      <div className={`relative p-3 rounded-xl transition-all duration-500 ${
+                        activeType === type.id
+                          ? "bg-gradient-to-br from-[#A100FF] to-[#7B00CC] shadow-[0_4px_14px_rgb(161,0,255,0.4)]"
+                          : "bg-slate-100 group-hover:bg-slate-200"
+                      }`}>
+                        <type.icon className={`w-5 h-5 transition-colors duration-500 ${
+                          activeType === type.id
+                            ? "text-white"
+                            : "text-slate-500 group-hover:text-slate-700"
+                        }`} />
+                      </div>
+                      <div>
+                        <h3 className={`text-lg font-semibold transition-colors duration-300 ${
+                          activeType === type.id
+                            ? "text-foreground"
+                            : "text-foreground/80 group-hover:text-foreground"
+                        }`}>
+                          {type.label}
+                        </h3>
+                        <span className={`inline-flex items-center text-xs font-medium mt-1 px-2.5 py-0.5 rounded-full transition-all duration-300 ${
+                          activeType === type.id
+                            ? "bg-[#A100FF]/10 text-[#A100FF]"
+                            : "bg-slate-100 text-slate-500 group-hover:bg-slate-200"
+                        }`}>
+                          {type.duration}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className={`text-sm leading-relaxed pl-16 transition-colors duration-300 ${
+                    activeType === type.id
+                      ? "text-muted-foreground"
+                      : "text-muted-foreground/70 group-hover:text-muted-foreground"
+                  }`}>
                     {type.description}
                   </p>
                 </button>

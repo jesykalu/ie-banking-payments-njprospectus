@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
-import { StatsTicker } from "@/components/stats-ticker"
+
 import { Capabilities } from "@/components/capabilities"
 import { Process } from "@/components/process"
 import { GlobalSection } from "@/components/global-section"
@@ -9,7 +9,7 @@ import { OurWork } from "@/components/our-work"
 import { IntegrationsTicker } from "@/components/integrations-ticker"
 import { WhyJoin } from "@/components/why-join"
 import { DiversityInclusion } from "@/components/diversity-inclusion"
-import { DevelopmentSection } from "@/components/development-section"
+
 import { PerformanceSection } from "@/components/performance-section"
 
 import { CTASection } from "@/components/cta-section"
@@ -20,7 +20,6 @@ export default function HomePage() {
     <main className="min-h-screen bg-background">
       <Navbar />
       <Hero />
-      <StatsTicker />
       <Capabilities />
       <WhyJoin />
       <Process />
@@ -29,8 +28,6 @@ export default function HomePage() {
       <PerformanceSection />
       <OurWork />
       <IntegrationsTicker />
-      
-      <DevelopmentSection />
       <DiversityInclusion />
       <CTASection />
       <Footer />
