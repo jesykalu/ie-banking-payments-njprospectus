@@ -1,6 +1,52 @@
 "use client";
 
 import { FadeIn } from "@/components/fade-in";
+import { Calendar, MapPin } from "lucide-react";
+
+const placeholderEvents = [
+  {
+    id: 1,
+    title: "Event Title Placeholder",
+    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    date: "Date TBC",
+    location: "Location TBC",
+  },
+  {
+    id: 2,
+    title: "Event Title Placeholder",
+    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    date: "Date TBC",
+    location: "Location TBC",
+  },
+  {
+    id: 3,
+    title: "Event Title Placeholder",
+    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    date: "Date TBC",
+    location: "Location TBC",
+  },
+  {
+    id: 4,
+    title: "Event Title Placeholder",
+    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    date: "Date TBC",
+    location: "Location TBC",
+  },
+  {
+    id: 5,
+    title: "Event Title Placeholder",
+    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    date: "Date TBC",
+    location: "Location TBC",
+  },
+  {
+    id: 6,
+    title: "Event Title Placeholder",
+    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    date: "Date TBC",
+    location: "Location TBC",
+  },
+];
 
 export function DiversityInclusion() {
   return (
@@ -20,36 +66,62 @@ export function DiversityInclusion() {
           </FadeIn>
         </div>
 
-        {/* Image grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
-          {/* Image 1 - Inclusive workplace */}
-          <FadeIn delay={200}>
-            <div className="relative overflow-hidden rounded-xl aspect-[4/3] image-zoom">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1211322739-tbmOYig5Mm6XPUYI6gymd2ZIKhyzLW.jpg"
-                alt="Colleagues collaborating in a modern office environment"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </FadeIn>
+        {/* Hero image */}
+        <FadeIn delay={200}>
+          <div className="relative overflow-hidden rounded-2xl aspect-[21/9] mb-12 image-zoom">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/936444-b02zOweTGUWBh4nZIXguY0JQnde2S7.jpg"
+              alt="Hand creating colorful soap bubble against lush green forest backdrop"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          </div>
+        </FadeIn>
 
-          {/* Image 2 - Work-life balance */}
-          <FadeIn delay={300}>
-            <div className="relative overflow-hidden rounded-xl aspect-[4/3] image-zoom">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Row100-Stocksy_txpa83009d9c2q300_OriginalDelivery_3619623-QqK2G8fZhMugO0bNXjqHe6RmcqrgWZ.jpg"
-                alt="Parent working from home while caring for child"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </FadeIn>
-        </div>
-
-        {/* Placeholder content */}
-        <div className="flex items-center justify-center min-h-[120px] border-2 border-dashed border-muted-foreground/30 rounded-lg">
-          <p className="text-xl font-semibold text-red-500">
-            CONTENT TBC
-          </p>
+        {/* Event cards grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {placeholderEvents.map((event, index) => (
+            <FadeIn key={event.id} delay={300 + index * 100}>
+              <div className="group relative bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 hover:scale-[1.02]">
+                {/* Placeholder image area */}
+                <div className="relative aspect-[16/10] bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto mb-3 rounded-xl bg-slate-300/50 flex items-center justify-center">
+                        <Calendar className="w-8 h-8 text-slate-400" />
+                      </div>
+                      <p className="text-sm font-medium text-slate-400">Event Image</p>
+                    </div>
+                  </div>
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-[#A100FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-[#A100FF] transition-colors duration-300">
+                    {event.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                    {event.description}
+                  </p>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Calendar className="w-4 h-4 text-[#A100FF]" />
+                      <span>{event.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <MapPin className="w-4 h-4 text-[#A100FF]" />
+                      <span>{event.location}</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#A100FF] to-[#7B00CC] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </div>
     </section>
