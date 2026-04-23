@@ -1,50 +1,38 @@
 "use client";
 
 import { FadeIn } from "@/components/fade-in";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar } from "lucide-react";
 
 const placeholderEvents = [
   {
     id: 1,
     title: "Event Title Placeholder",
     description: "Brief description of the event goes here. This will be updated with actual event details.",
-    date: "Date TBC",
-    location: "Location TBC",
   },
   {
     id: 2,
     title: "Event Title Placeholder",
     description: "Brief description of the event goes here. This will be updated with actual event details.",
-    date: "Date TBC",
-    location: "Location TBC",
   },
   {
     id: 3,
     title: "Event Title Placeholder",
     description: "Brief description of the event goes here. This will be updated with actual event details.",
-    date: "Date TBC",
-    location: "Location TBC",
   },
   {
     id: 4,
     title: "Event Title Placeholder",
     description: "Brief description of the event goes here. This will be updated with actual event details.",
-    date: "Date TBC",
-    location: "Location TBC",
   },
   {
     id: 5,
     title: "Event Title Placeholder",
     description: "Brief description of the event goes here. This will be updated with actual event details.",
-    date: "Date TBC",
-    location: "Location TBC",
   },
   {
     id: 6,
     title: "Event Title Placeholder",
     description: "Brief description of the event goes here. This will be updated with actual event details.",
-    date: "Date TBC",
-    location: "Location TBC",
   },
 ];
 
@@ -105,16 +93,7 @@ export function DiversityInclusion() {
                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                     {event.description}
                   </p>
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="w-4 h-4 text-[#A100FF]" />
-                      <span>{event.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <MapPin className="w-4 h-4 text-[#A100FF]" />
-                      <span>{event.location}</span>
-                    </div>
-                  </div>
+                  
                 </div>
                 
                 {/* Bottom accent line */}
