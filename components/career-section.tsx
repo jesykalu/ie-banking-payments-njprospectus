@@ -69,9 +69,9 @@ export function CareerSection() {
           ))}
         </div>
 
-        {/* Quote with image */}
+        {/* Quote */}
         <div className="mt-10 lg:mt-14 pt-10 border-t border-border">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="max-w-3xl">
             <FadeIn direction="right">
               <div>
                 <blockquote className="text-2xl lg:text-3xl font-medium text-foreground leading-relaxed">
@@ -81,15 +81,6 @@ export function CareerSection() {
                 <p className="text-muted-foreground mt-6">
                   — Anna McKinven - UK Banking Practice Leadership
                 </p>
-              </div>
-            </FadeIn>
-            <FadeIn direction="left" delay={200}>
-              <div className="relative overflow-hidden rounded-xl aspect-[4/3] image-zoom">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1131724309-TuaL73iFHpObVS9Ul3FrUEpNfmrBl1.jpg"
-                  alt="Professional woman in urban business district looking ahead confidently"
-                  className="w-full h-full object-cover"
-                />
               </div>
             </FadeIn>
           </div>
