@@ -9,7 +9,6 @@ const navLinks = [
   { label: "How We Work", href: "#work" },
   { label: "Your Career", href: "#career" },
   { label: "Our Work", href: "#our-work" },
-  { label: "Training & Development", href: "#training" },
   { label: "Our Events", href: "#diversity" },
 ];
 
