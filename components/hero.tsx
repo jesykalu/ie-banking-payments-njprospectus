@@ -21,7 +21,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
 
         {/* Content on image */}
-        <div className="absolute inset-0 flex flex-col justify-end pb-20 lg:pb-32">
+        <div className="absolute inset-0 flex flex-col justify-center">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
             <div className="max-w-3xl">
               <FadeIn delay={200} duration={800}>
