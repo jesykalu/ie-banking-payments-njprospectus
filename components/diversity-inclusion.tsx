@@ -56,12 +56,12 @@ export function DiversityInclusion() {
         <div className="mb-10 lg:mb-12">
           <FadeIn>
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-              Our Commitment
+              Our Events
             </p>
           </FadeIn>
           <FadeIn delay={100}>
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
-              Our Events
+              Connect, Learn & Celebrate
             </h2>
           </FadeIn>
         </div>
