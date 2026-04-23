@@ -51,7 +51,9 @@ export function WhyJoin() {
           src="/images/why-join-us.jpg"
           alt="Diverse team of professionals collaborating around a table in a modern office with plants"
           fill
+          sizes="100vw"
           className="object-cover"
+          priority
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/70" />
