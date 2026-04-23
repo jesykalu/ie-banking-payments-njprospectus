@@ -8,8 +8,8 @@ const _inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const _geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: 'Accenture S&C Banking | UK & Ireland',
-  description: 'Candidate prospectus for Accenture Strategy & Consulting Banking Practice, UK & Ireland. For experienced professionals at Manager and Senior Manager level.',
+  title: 'Accenture Industry and Enterprise UKI Banking | UK & Ireland',
+  description: 'Candidate prospectus for Accenture Industry and Enterprise UKI Banking Practice, UK & Ireland. For experienced professionals at Manager and Senior Manager level.',
   generator: 'v0.app',
   icons: {
     icon: [
