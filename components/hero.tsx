@@ -72,9 +72,9 @@ export function Hero() {
                   asChild
                   className="bg-white text-slate-800 hover:bg-slate-100 rounded-none px-8 py-6 text-sm font-medium"
                 >
-                  <a href="https://www.accenture.com/gb-en/careers" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.accenture.com/gb-en/careers" target="_blank" rel="noopener noreferrer" className="flex items-center">
                     Explore Opportunities
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    <ArrowRight className="w-4 h-4 ml-2 text-slate-800" />
                   </a>
                 </Button>
               </div>
