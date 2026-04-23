@@ -12,7 +12,7 @@ export function CTASection() {
         <img
           src="/images/events-background.jpg"
           alt=""
-          className="w-full h-full object-cover object-[center_30%]"
+          className="w-full h-full object-cover object-[center_70%]"
         />
       </div>
       {/* Overlay for readability */}
