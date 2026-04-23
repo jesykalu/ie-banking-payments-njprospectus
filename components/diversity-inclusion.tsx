@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef, useState, useEffect } from "react";
 import { FadeIn } from "@/components/fade-in";
-import { Calendar } from "lucide-react";
+import { Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 
 const placeholderEvents = [
   {
@@ -37,6 +38,47 @@ const placeholderEvents = [
 ];
 
 export function DiversityInclusion() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScrollPosition = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    checkScrollPosition();
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener("scroll", checkScrollPosition);
+      return () => container.removeEventListener("scroll", checkScrollPosition);
+    }
+  }, []);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const cardWidth = 380;
+      const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
+      
+      // If at the end and scrolling right, loop to start
+      if (direction === "right" && !canScrollRight) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } 
+      // If at the start and scrolling left, loop to end
+      else if (direction === "left" && !canScrollLeft) {
+        container.scrollTo({ left: container.scrollWidth, behavior: "smooth" });
+      } 
+      else {
+        container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <section 
       id="diversity" 
@@ -57,11 +99,33 @@ export function DiversityInclusion() {
           </FadeIn>
         </div>
 
-        {/* Event cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Navigation buttons */}
+        <div className="flex items-center justify-end gap-3 mb-6">
+          <button
+            onClick={() => scroll("left")}
+            className="p-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:bg-[#A100FF] group"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-5 h-5 text-slate-600 group-hover:text-white transition-colors" />
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className="p-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:bg-[#A100FF] group"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-5 h-5 text-slate-600 group-hover:text-white transition-colors" />
+          </button>
+        </div>
+
+        {/* Event cards carousel */}
+        <div 
+          ref={scrollContainerRef}
+          className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
           {placeholderEvents.map((event, index) => (
             <FadeIn key={event.id} delay={300 + index * 100}>
-              <div className="group relative bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 hover:scale-[1.02]">
+              <div className="group relative flex-shrink-0 w-[350px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 hover:scale-[1.02] snap-start">
                 {/* Placeholder image area */}
                 <div className="relative aspect-[16/10] bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -84,7 +148,6 @@ export function DiversityInclusion() {
                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                     {event.description}
                   </p>
-                  
                 </div>
                 
                 {/* Bottom accent line */}
