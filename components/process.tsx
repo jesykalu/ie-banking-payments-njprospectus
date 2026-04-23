@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Compass, Rocket, Users } from "lucide-react";
 
 const engagementTypes = [
   {
@@ -9,6 +10,7 @@ const engagementTypes = [
     duration: "6-16 weeks",
     description:
       "Diagnostic studies, target operating model design, regulatory impact assessments, vendor selection. Fast-paced, C-suite facing, high-visibility from day one.",
+    icon: Compass,
   },
   {
     id: "delivery",
@@ -16,6 +18,7 @@ const engagementTypes = [
     duration: "3 months - 3+ years",
     description:
       "From strategy into executable blueprint — business cases, architecture design, governance, mobilisation — through to full transformation execution.",
+    icon: Rocket,
   },
   {
     id: "advisory",
@@ -23,6 +26,7 @@ const engagementTypes = [
     duration: "Ongoing",
     description:
       "Standing advisory capacity — regulatory horizon scanning, strategic input, and programme oversight. Closest to senior client leadership.",
+    icon: Users,
   },
 ];
 
@@ -102,14 +106,27 @@ export function Process() {
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-lg font-semibold text-foreground">
-                      {type.label}
-                    </h3>
+                    <div className="flex items-center gap-3">
+                      <div className={`p-2 rounded-lg transition-colors duration-300 ${
+                        activeType === type.id
+                          ? "bg-[#A100FF]/10"
+                          : "bg-slate-100"
+                      }`}>
+                        <type.icon className={`w-5 h-5 transition-colors duration-300 ${
+                          activeType === type.id
+                            ? "text-[#A100FF]"
+                            : "text-muted-foreground"
+                        }`} />
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground">
+                        {type.label}
+                      </h3>
+                    </div>
                     <span className="text-sm text-[#A100FF] font-medium">
                       {type.duration}
                     </span>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed pl-12">
                     {type.description}
                   </p>
                 </button>
