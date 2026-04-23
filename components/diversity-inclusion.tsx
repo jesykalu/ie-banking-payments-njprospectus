@@ -50,35 +50,33 @@ const placeholderEvents = [
 
 export function DiversityInclusion() {
   return (
-    <section id="diversity" className="py-12 lg:py-16 bg-gradient-to-b from-white to-slate-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section 
+      id="diversity" 
+      className="relative py-12 lg:py-16"
+      style={{
+        backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/936444-xDc48UUQfNl5Ywd8wwC7VLVvPvQTln.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-slate-900/70" />
+      
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-10 lg:mb-12">
           <FadeIn>
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-slate-300 mb-4">
               Our Events
             </p>
           </FadeIn>
           <FadeIn delay={100}>
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
+            <h2 className="text-3xl lg:text-5xl font-bold text-white max-w-2xl leading-tight">
               Connect, Learn & Celebrate
             </h2>
           </FadeIn>
         </div>
-
-        {/* Hero image */}
-        <FadeIn delay={200}>
-          <div className="relative overflow-hidden rounded-2xl aspect-[21/9] mb-12 image-zoom">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/936444-b02zOweTGUWBh4nZIXguY0JQnde2S7.jpg"
-              alt="Hand creating colorful soap bubble against lush green forest backdrop"
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-          </div>
-        </FadeIn>
 
         {/* Event cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
