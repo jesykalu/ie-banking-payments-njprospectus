@@ -11,14 +11,14 @@ export function Hero() {
       {/* Hero Image Section - Full bleed */}
       <div className="relative h-[70vh] lg:h-[80vh] overflow-hidden">
         <Image
-          src="/images/hero-bg.png"
-          alt="Banking professional"
+          src="/images/hero-bg.jpg"
+          alt="Mountain lake landscape with two people looking at scenic view"
           fill
-          className="object-cover object-top scale-105 animate-[scale-in_1.5s_ease-out_forwards]"
+          className="object-cover object-center scale-105 animate-[scale-in_1.5s_ease-out_forwards]"
           priority
         />
-        {/* Dark overlay for contrast - less transparent */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
+        {/* Dark overlay for text contrast - stronger gradient for readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
 
         {/* Content on image */}
         <div className="absolute inset-0 flex flex-col justify-end pb-20 lg:pb-32">
