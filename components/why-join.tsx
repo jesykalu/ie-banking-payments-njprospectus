@@ -1,41 +1,41 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Globe, Layers, Scale, Sparkles, TrendingUp, Users } from "lucide-react";
 import Image from "next/image";
 
 const reasons = [
   {
-    id: "01",
+    icon: Globe,
     title: "The most complex market in the world",
     description:
       "London gives you access to Tier 1 global banks, the Bank of England, world-class payments infrastructure, and one of the world's most active challenger ecosystems — all in one market. There are also opportunities to work for global clients.",
   },
   {
-    id: "02",
+    icon: Layers,
     title: "Strategy and delivery credibility",
     description:
       "Unlike pure-play strategy boutiques, Accenture holds both the strategy and the delivery. You don't just design the answer — you help build it. That dual credibility is rare and makes your career trajectory far more versatile.",
   },
   {
-    id: "03",
+    icon: Scale,
     title: "The UK regulatory moment",
     description:
       "Basel 3.1, Consumer Duty, NPA, SM&CR reform, operational resilience — the UK regulatory agenda is one of the busiest in a decade. These mandates are not optional for UK banks.",
   },
   {
-    id: "04",
+    icon: Sparkles,
     title: "AI at the frontier",
     description:
       "Accenture is investing $3 billion globally in AI with proprietary tools already deployed in UK banking engagements. Joining now means shaping what AI-native UK banking looks like.",
   },
   {
-    id: "05",
+    icon: TrendingUp,
     title: "A clear and meritocratic path",
     description:
       "The career path is transparent, the meritocracy is real, and London's profile within Accenture globally means strong performers gain visibility well beyond the UK market.",
   },
   {
-    id: "06",
+    icon: Users,
     title: "Community and culture",
     description:
       "People are at the core for our practice. We combine intellectual rigour with genuine collaborative culture — united by a shared passion for banking and the challenges it presents.",
@@ -72,15 +72,15 @@ export function WhyJoin() {
 
         {/* Reasons list - two columns */}
         <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-8">
-          {reasons.map((reason) => (
+          {reasons.map((reason, index) => (
             <div
-              key={reason.id}
+              key={index}
               className="group py-6 border-t border-white/20 cursor-pointer"
             >
               <div className="flex items-start gap-6">
-                <span className="text-sm font-mono text-[#A100FF] mt-1">
-                  {reason.id}
-                </span>
+                <div className="p-2 rounded-lg bg-[#A100FF]/20 group-hover:bg-[#A100FF]/30 transition-colors">
+                  <reason.icon className="w-5 h-5 text-[#A100FF]" />
+                </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="text-lg lg:text-xl font-semibold text-white group-hover:text-[#A100FF] transition-colors">
