@@ -40,7 +40,7 @@ export function IntegrationsTicker() {
           Clients & Ecosystem
         </p>
         <h2 className="text-3xl lg:text-5xl font-bold text-white max-w-2xl leading-tight">
-          Works with everything that matters in UK banking.
+          Works with everything that<br />matters in UK banking.
         </h2>
       </div>
 
