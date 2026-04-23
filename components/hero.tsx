@@ -26,7 +26,7 @@ export function Hero() {
             <div className="max-w-3xl">
               <FadeIn delay={200} duration={800}>
                 <p className="text-white/70 text-xs uppercase tracking-[0.2em] mb-6 font-medium">
-                  Strategy & Consulting / Banking / UK & Ireland
+                  Accenture / Reinvention Partners / Banking / UK & Ireland
                 </p>
               </FadeIn>
               <FadeIn delay={400} duration={800}>
