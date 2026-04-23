@@ -40,29 +40,18 @@ export function DiversityInclusion() {
   return (
     <section 
       id="diversity" 
-      className="relative py-12 lg:py-16 overflow-hidden"
+      className="py-12 lg:py-16 bg-gradient-to-b from-white to-slate-50"
     >
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/events-background.jpg"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-slate-900/70" />
-      
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-10 lg:mb-12">
           <FadeIn>
-            <p className="text-xs uppercase tracking-[0.2em] text-slate-300 mb-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
               Our Events
             </p>
           </FadeIn>
           <FadeIn delay={100}>
-            <h2 className="text-3xl lg:text-5xl font-bold text-white max-w-2xl leading-tight">
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground max-w-2xl leading-tight">
               Connect, Learn & Celebrate
             </h2>
           </FadeIn>
