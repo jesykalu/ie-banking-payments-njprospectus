@@ -7,22 +7,22 @@ import { Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 const placeholderEvents = [
   {
     id: 1,
-    title: "Event Title Placeholder",
+    title: "Banking Offsite",
     description: "Brief description of the event goes here. This will be updated with actual event details.",
   },
   {
     id: 2,
-    title: "Event Title Placeholder",
+    title: "Monthly Pulse Connects",
     description: "Brief description of the event goes here. This will be updated with actual event details.",
   },
   {
     id: 3,
-    title: "Event Title Placeholder",
+    title: "Team Socials",
     description: "Brief description of the event goes here. This will be updated with actual event details.",
   },
   {
     id: 4,
-    title: "Event Title Placeholder",
+    title: "New Joiners Welcome",
     description: "Brief description of the event goes here. This will be updated with actual event details.",
   },
   {

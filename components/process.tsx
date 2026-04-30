@@ -30,47 +30,141 @@ const engagementTypes = [
   },
 ];
 
-const weekSchedule = [
-  {
-    day: "Mon",
-    activities: [
-      "Team planning call",
-      "Regulatory workstream analysis",
-      "Review analyst outputs",
+const weekSchedules: Record<string, { role: string; schedule: { day: string; activities: string[] }[] }> = {
+  strategy: {
+    role: "Manager, Core Banking Programme",
+    schedule: [
+      {
+        day: "Mon",
+        activities: [
+          "Team planning call",
+          "Regulatory workstream analysis",
+          "Review analyst outputs",
+        ],
+      },
+      {
+        day: "Tue",
+        activities: [
+          "Client site: stakeholder interviews",
+          "Afternoon synthesis session",
+        ],
+      },
+      {
+        day: "Wed",
+        activities: [
+          "Facilitate working group",
+          "Draft steering pack",
+          "Architecture lead call",
+        ],
+      },
+      {
+        day: "Thu",
+        activities: [
+          "Benchmarking & modelling",
+          "Peer review",
+          "Proposal development",
+        ],
+      },
+      {
+        day: "Fri",
+        activities: [
+          "Practice knowledge share",
+          "Learning module",
+          "People Lead check-in",
+        ],
+      },
     ],
   },
-  {
-    day: "Tue",
-    activities: [
-      "Client site: stakeholder interviews",
-      "Afternoon synthesis session",
+  delivery: {
+    role: "Manager, Payments Transformation",
+    schedule: [
+      {
+        day: "Mon",
+        activities: [
+          "Programme governance call",
+          "Workstream lead sync",
+          "Update RAID log",
+        ],
+      },
+      {
+        day: "Tue",
+        activities: [
+          "Client workshop: process design",
+          "Stakeholder alignment session",
+        ],
+      },
+      {
+        day: "Wed",
+        activities: [
+          "Blueprint review",
+          "Mobilisation planning",
+          "Dependency mapping",
+        ],
+      },
+      {
+        day: "Thu",
+        activities: [
+          "Business case refinement",
+          "Delivery assurance review",
+          "Team stand-up",
+        ],
+      },
+      {
+        day: "Fri",
+        activities: [
+          "Weekly client status report",
+          "Lessons learned review",
+          "People Lead check-in",
+        ],
+      },
     ],
   },
-  {
-    day: "Wed",
-    activities: [
-      "Facilitate working group",
-      "Draft steering pack",
-      "Architecture lead call",
+  advisory: {
+    role: "Manager, Regulatory Strategy",
+    schedule: [
+      {
+        day: "Mon",
+        activities: [
+          "Regulatory horizon scan",
+          "Client briefing preparation",
+          "Internal knowledge update",
+        ],
+      },
+      {
+        day: "Tue",
+        activities: [
+          "Senior client call",
+          "Strategic input session",
+          "Policy review",
+        ],
+      },
+      {
+        day: "Wed",
+        activities: [
+          "Advisory note drafting",
+          "Cross-practice collaboration",
+          "Risk discussion",
+        ],
+      },
+      {
+        day: "Thu",
+        activities: [
+          "Executive steering support",
+          "Emerging issues review",
+          "Peer challenge session",
+        ],
+      },
+      {
+        day: "Fri",
+        activities: [
+          "Client relationship check-in",
+          "Forward agenda planning",
+          "People Lead check-in",
+        ],
+      },
     ],
   },
-  {
-    day: "Thu",
-    activities: [
-      "Benchmarking & modelling",
-      "Peer review",
-      "Proposal development",
-    ],
-  },
-  {
-    day: "Fri",
-    activities: [
-      "Practice knowledge share",
-      "Learning module",
-      "People Lead check-in",
-    ],
-  },
-];
+};
 
 export function Process() {
   const [activeType, setActiveType] = useState("strategy");
@@ -160,14 +254,17 @@ export function Process() {
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">
               A Week in the Practice
             </p>
-            <div className="bg-white border border-border">
+            <div 
+              key={activeType}
+              className="bg-white border border-border animate-in fade-in duration-300"
+            >
               <div className="p-6 border-b border-border">
                 <p className="text-sm text-muted-foreground">
-                  Manager, Core Banking Programme
+                  {weekSchedules[activeType].role}
                 </p>
               </div>
               <div className="divide-y divide-border">
-                {weekSchedule.map((day) => (
+                {weekSchedules[activeType].schedule.map((day) => (
                   <div key={day.day} className="p-6 flex gap-6">
                     <span className="text-sm font-semibold text-[#A100FF] w-12 shrink-0">
                       {day.day}
