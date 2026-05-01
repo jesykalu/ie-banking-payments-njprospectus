@@ -27,13 +27,13 @@ const placeholderEvents = [
   },
   {
     id: 5,
-    title: "Event Title Placeholder",
-    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    title: "Lunch and Learn Sessions with Leadership",
+    description: "Intimate small-group lunches offering direct face time with senior leaders — a space to gain candid career navigation advice, explore what it takes to get ahead, and build relationships with those shaping the direction of the business.",
   },
   {
     id: 6,
-    title: "Event Title Placeholder",
-    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    title: "Women in Finance (WIFS Network) Events",
+    description: "Our award-winning Women in Financial Services (WIFS) Network — recognised as Network of the Year at the TechWomen100 Awards — brings together colleagues of all genders, career levels, and backgrounds to champion gender equality, share experiences, and drive meaningful change across the industry.",
   },
 ];
 
