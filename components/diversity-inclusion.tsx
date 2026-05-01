@@ -37,7 +37,7 @@ const placeholderEvents = [
   },
   {
     id: 6,
-    title: "Women in Finance (WIFS Network) Events",
+    title: "Women in Financial Services (WIFS) Network Events",
     description: "Our award-winning Women in Financial Services (WIFS) Network — recognised as Network of the Year at the TechWomen100 Awards — brings together colleagues of all genders, career levels, and backgrounds to champion gender equality, share experiences, and drive meaningful change across the industry.",
   },
 ];
