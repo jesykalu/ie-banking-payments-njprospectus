@@ -103,7 +103,7 @@ const weekSchedules: Record<string, { role: string; schedule: { day: string; act
     ],
   },
   delivery: {
-    role: "Manager, Payments Transformation",
+    role: "Manager, Core Banking Transformation",
     schedule: [
       {
         day: "Mon",
