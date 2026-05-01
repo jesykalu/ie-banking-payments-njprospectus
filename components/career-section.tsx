@@ -79,16 +79,17 @@ export function CareerSection() {
                     &quot;The system is meritocratic. The best people advance ahead of
                     their peer group, and that&apos;s consistent across the practice.&quot;
                   </blockquote>
-                  <p className="text-muted-foreground mt-6">
-                    — Anna McKinven - UK Banking Practice Leadership
-                  </p>
                 </div>
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 flex flex-col items-center">
                   <img 
                     src="/images/anna-mckinven.png" 
                     alt="Anna McKinven"
                     className="w-24 h-24 lg:w-32 lg:h-32 rounded-full object-cover"
                   />
+                  <p className="text-muted-foreground mt-4 text-center text-sm">
+                    Anna McKinven<br />
+                    <span className="text-xs">UK Banking Practice Leadership</span>
+                  </p>
                 </div>
               </div>
             </FadeIn>
