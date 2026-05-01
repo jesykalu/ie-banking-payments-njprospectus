@@ -15,6 +15,7 @@ const placeholderEvents = [
     id: 2,
     title: "Monthly Pulse Connects",
     description: "Regular touchpoints held at different career levels, designed to foster knowledge sharing, open dialogue, and direct feedback to leadership — keeping everyone informed, heard, and connected.",
+    image: "/images/monthly-pulse-connects.png",
   },
   {
     id: 3,
