@@ -86,9 +86,9 @@ export function CareerSection() {
                     alt="Anna McKinven"
                     className="w-24 h-24 lg:w-32 lg:h-32 rounded-full object-cover"
                   />
-                  <p className="text-muted-foreground mt-4 text-center text-sm">
-                    Anna McKinven<br />
-                    <span className="text-xs">UK Banking Practice Leadership</span>
+                  <p className="mt-4 text-center">
+                    <span className="text-lg font-semibold text-[#A100FF] block">Anna McKinven</span>
+                    <span className="text-sm text-[#A100FF]">UK Banking Practice Leadership</span>
                   </p>
                 </div>
               </div>
