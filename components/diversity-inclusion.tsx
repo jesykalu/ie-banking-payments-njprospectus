@@ -20,6 +20,7 @@ const placeholderEvents = [
     id: 3,
     title: "Team Socials",
     description: "Monthly informal gatherings that bring colleagues together across different client projects for food, conversation, and genuine connection — because great teams are built beyond the desk.",
+    image: "/images/team-socials.png",
   },
   {
     id: 4,
