@@ -9,6 +9,7 @@ const placeholderEvents = [
     id: 1,
     title: "Banking Offsite",
     description: "A flagship community-wide event bringing the entire Banking practice together for a full day of business updates, growth agenda setting, and inspiring sessions on the latest industry trends and our strategic positioning.",
+    image: "/images/banking-offsite.jpg",
   },
   {
     id: 2,
@@ -128,16 +129,24 @@ export function DiversityInclusion() {
           {placeholderEvents.map((event, index) => (
             <FadeIn key={event.id} delay={300 + index * 100}>
               <div className="group relative flex-shrink-0 w-[350px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 hover:scale-[1.02] snap-start">
-                {/* Placeholder image area */}
+                {/* Image area */}
                 <div className="relative aspect-[16/10] bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 mx-auto mb-3 rounded-xl bg-slate-300/50 flex items-center justify-center">
-                        <Calendar className="w-8 h-8 text-slate-400" />
+                  {event.image ? (
+                    <img 
+                      src={event.image} 
+                      alt={event.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-16 h-16 mx-auto mb-3 rounded-xl bg-slate-300/50 flex items-center justify-center">
+                          <Calendar className="w-8 h-8 text-slate-400" />
+                        </div>
+                        <p className="text-sm font-medium text-slate-400">Event Image</p>
                       </div>
-                      <p className="text-sm font-medium text-slate-400">Event Image</p>
                     </div>
-                  </div>
+                  )}
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-[#A100FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
