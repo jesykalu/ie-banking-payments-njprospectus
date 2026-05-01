@@ -8,22 +8,22 @@ const placeholderEvents = [
   {
     id: 1,
     title: "Banking Offsite",
-    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    description: "A flagship community-wide event bringing the entire Banking practice together for a full day of business updates, growth agenda setting, and inspiring sessions on the latest industry trends and our strategic positioning.",
   },
   {
     id: 2,
     title: "Monthly Pulse Connects",
-    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    description: "Regular touchpoints held at different career levels, designed to foster knowledge sharing, open dialogue, and direct feedback to leadership — keeping everyone informed, heard, and connected.",
   },
   {
     id: 3,
     title: "Team Socials",
-    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    description: "Monthly informal gatherings that bring colleagues together across different client projects for food, conversation, and genuine connection — because great teams are built beyond the desk.",
   },
   {
     id: 4,
     title: "New Joiners Welcome",
-    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    description: "A warm and celebratory welcome for every new addition to the team, covering business introductions, team structures, and everything you need to know to hit the ground running and know who to turn to for support.",
   },
   {
     id: 5,
