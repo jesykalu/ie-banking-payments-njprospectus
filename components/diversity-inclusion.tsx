@@ -27,11 +27,13 @@ const placeholderEvents = [
     id: 4,
     title: "New Joiners Welcome",
     description: "A warm and celebratory welcome for every new addition to the team, covering business introductions, team structures, and everything you need to know to hit the ground running and know who to turn to for support.",
+    image: "/images/new-joiners-welcome.png",
   },
   {
     id: 5,
     title: "Lunch and Learn Sessions with Leadership",
     description: "Intimate small-group lunches offering direct face time with senior leaders — a space to gain candid career navigation advice, explore what it takes to get ahead, and build relationships with those shaping the direction of the business.",
+    image: "/images/lunch-and-learn.png",
   },
   {
     id: 6,
