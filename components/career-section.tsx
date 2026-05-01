@@ -71,29 +71,27 @@ export function CareerSection() {
 
         {/* Quote */}
         <div className="mt-10 lg:mt-14 pt-10 border-t border-border">
-          <div className="max-w-4xl">
-            <FadeIn direction="right">
-              <div className="flex items-center gap-8 lg:gap-12">
-                <div className="flex-1">
-                  <blockquote className="text-2xl lg:text-3xl font-medium text-foreground leading-relaxed">
-                    &quot;The system is meritocratic. The best people advance ahead of
-                    their peer group, and that&apos;s consistent across the practice.&quot;
-                  </blockquote>
-                </div>
-                <div className="flex-shrink-0 flex flex-col items-center">
-                  <img 
-                    src="/images/anna-mckinven.png" 
-                    alt="Anna McKinven"
-                    className="w-24 h-24 lg:w-32 lg:h-32 rounded-full object-cover"
-                  />
-                  <p className="mt-4 text-center">
-                    <span className="text-lg font-semibold text-[#A100FF] block">Anna McKinven</span>
-                    <span className="text-sm text-[#A100FF]">UK Banking Practice Leadership</span>
-                  </p>
-                </div>
+          <FadeIn direction="right">
+            <div className="flex items-center gap-8 lg:gap-12">
+              <div className="flex-1 lg:w-[75%]">
+                <blockquote className="text-2xl lg:text-3xl font-medium text-foreground leading-relaxed">
+                  &quot;The system is meritocratic. The best people advance ahead of
+                  their peer group, and that&apos;s consistent across the practice.&quot;
+                </blockquote>
               </div>
-            </FadeIn>
-          </div>
+              <div className="flex-shrink-0 lg:w-[25%] flex flex-col items-center">
+                <img 
+                  src="/images/anna-mckinven.png" 
+                  alt="Anna McKinven"
+                  className="w-24 h-24 lg:w-32 lg:h-32 rounded-full object-cover"
+                />
+                <p className="mt-4 text-center">
+                  <span className="text-lg font-semibold text-[#A100FF] block">Anna McKinven</span>
+                  <span className="text-sm text-[#A100FF]">UK Banking Practice Leadership</span>
+                </p>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>
