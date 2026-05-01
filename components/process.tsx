@@ -296,7 +296,7 @@ export function Process() {
           {/* Week View */}
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">
-              A Week in the Practice
+              An Illustrative Week in the Practice
             </p>
             <div 
               key={activeType}
