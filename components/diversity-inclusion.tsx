@@ -133,9 +133,9 @@ export function DiversityInclusion() {
         >
           {placeholderEvents.map((event, index) => (
             <FadeIn key={event.id} delay={300 + index * 100}>
-              <div className="group relative flex-shrink-0 w-[350px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 hover:scale-[1.02] snap-start">
-                {/* Image area */}
-                <div className="relative aspect-[16/10] bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
+              <div className="group relative flex-shrink-0 w-[350px] h-[420px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 hover:scale-[1.02] snap-start flex flex-col">
+                {/* Image area - fixed height */}
+                <div className="relative h-[180px] flex-shrink-0 bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
                   {event.image ? (
                     <img 
                       src={event.image} 
@@ -156,12 +156,14 @@ export function DiversityInclusion() {
                   <div className="absolute inset-0 bg-[#A100FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-[#A100FF] transition-colors duration-300">
+                {/* Content - flex-grow to fill remaining space */}
+                <div className="p-6 flex flex-col flex-grow">
+                  {/* Title area - fixed height for 2 lines */}
+                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-[#A100FF] transition-colors duration-300 h-[56px] line-clamp-2">
                     {event.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  {/* Description area - fixed with truncation */}
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4 flex-grow">
                     {event.description}
                   </p>
                 </div>
