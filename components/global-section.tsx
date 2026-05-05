@@ -4,7 +4,7 @@ import { AnimatedCounter } from "./animated-counter";
 import { FadeIn } from "@/components/fade-in";
 
 const offices = [
-  { city: "London", role: "HQ" },
+  { city: "London", role: "UK & Ireland HQ" },
   { city: "Manchester", role: "Regional Hub" },
   { city: "Edinburgh", role: "Regional Hub" },
   { city: "Dublin", role: "Ireland HQ" },
@@ -87,11 +87,7 @@ export function GlobalSection() {
               {offices.map((office, index) => (
                 <FadeIn key={office.city} delay={index * 80} direction="left">
                   <div
-                    className={`p-6 border transition-all duration-500 hover:translate-x-2 ${
-                      index === 0
-                        ? "border-[#A100FF] bg-[#A100FF]/10"
-                        : "border-background/10 hover:border-background/20"
-                    }`}
+                    className="p-6 border border-background/10 hover:border-background/20 transition-all duration-500 hover:translate-x-2"
                   >
                     <div>
                       <h3 className="text-xl font-semibold text-background">

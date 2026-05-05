@@ -1,6 +1,13 @@
-import { clerkMiddleware } from '@clerk/nextjs/server'
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
 
-export default clerkMiddleware()
+// Clerk middleware temporarily disabled to fix hydration issues
+// import { clerkMiddleware } from '@clerk/nextjs/server'
+// export default clerkMiddleware()
+
+export default function middleware(request: NextRequest) {
+  return NextResponse.next()
+}
 
 export const config = {
   matcher: [

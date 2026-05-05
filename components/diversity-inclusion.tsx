@@ -7,33 +7,39 @@ import { Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 const placeholderEvents = [
   {
     id: 1,
-    title: "Event Title Placeholder",
-    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    title: "Banking Offsite",
+    description: "A flagship community-wide event bringing the entire Banking practice together for a full day of business updates, growth agenda setting, and inspiring sessions on the latest industry trends and our strategic positioning.",
+    image: "/images/banking-offsite.jpg",
   },
   {
     id: 2,
-    title: "Event Title Placeholder",
-    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    title: "Monthly Pulse Connects",
+    description: "Regular touchpoints held at different career levels, designed to foster knowledge sharing, open dialogue, and direct feedback to leadership — keeping everyone informed, heard, and connected.",
+    image: "/images/monthly-pulse-connects.png",
   },
   {
     id: 3,
-    title: "Event Title Placeholder",
-    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    title: "Team Socials",
+    description: "Monthly informal gatherings that bring colleagues together across different client projects for food, conversation, and genuine connection — because great teams are built beyond the desk.",
+    image: "/images/team-socials.png",
   },
   {
     id: 4,
-    title: "Event Title Placeholder",
-    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    title: "New Joiners Welcome",
+    description: "A warm and celebratory welcome for every new addition to the team, covering business introductions, team structures, and everything you need to know to hit the ground running and know who to turn to for support.",
+    image: "/images/new-joiners-welcome.png",
   },
   {
     id: 5,
-    title: "Event Title Placeholder",
-    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    title: "Lunch and Learn Sessions with Leadership",
+    description: "Intimate small-group lunches offering direct face time with senior leaders — a space to gain candid career navigation advice, explore what it takes to get ahead, and build relationships with those shaping the direction of the business.",
+    image: "/images/lunch-and-learn.png",
   },
   {
     id: 6,
-    title: "Event Title Placeholder",
-    description: "Brief description of the event goes here. This will be updated with actual event details.",
+    title: "Women in Financial Services (WIFS) Network Events",
+    description: "Our award-winning Women in Financial Services (WIFS) Network — recognised as Network of the Year at the TechWomen100 Awards — brings together colleagues of all genders, career levels, and backgrounds to champion gender equality, share experiences, and drive meaningful change across the industry.",
+    image: "/images/wifs-network.png",
   },
 ];
 
@@ -127,27 +133,37 @@ export function DiversityInclusion() {
         >
           {placeholderEvents.map((event, index) => (
             <FadeIn key={event.id} delay={300 + index * 100}>
-              <div className="group relative flex-shrink-0 w-[350px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 hover:scale-[1.02] snap-start">
-                {/* Placeholder image area */}
-                <div className="relative aspect-[16/10] bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 mx-auto mb-3 rounded-xl bg-slate-300/50 flex items-center justify-center">
-                        <Calendar className="w-8 h-8 text-slate-400" />
+              <div className="group relative flex-shrink-0 w-[350px] h-[420px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 hover:scale-[1.02] snap-start flex flex-col">
+                {/* Image area - fixed height */}
+                <div className="relative h-[180px] flex-shrink-0 bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
+                  {event.image ? (
+                    <img 
+                      src={event.image} 
+                      alt={event.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-16 h-16 mx-auto mb-3 rounded-xl bg-slate-300/50 flex items-center justify-center">
+                          <Calendar className="w-8 h-8 text-slate-400" />
+                        </div>
+                        <p className="text-sm font-medium text-slate-400">Event Image</p>
                       </div>
-                      <p className="text-sm font-medium text-slate-400">Event Image</p>
                     </div>
-                  </div>
+                  )}
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-[#A100FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-[#A100FF] transition-colors duration-300">
+                {/* Content - flex-grow to fill remaining space */}
+                <div className="p-6 flex flex-col flex-grow">
+                  {/* Title area - fixed height for 2 lines */}
+                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-[#A100FF] transition-colors duration-300 h-[56px] line-clamp-2">
                     {event.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  {/* Description area - fixed with truncation */}
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4 flex-grow">
                     {event.description}
                   </p>
                 </div>
