@@ -73,8 +73,8 @@ export function GlobalSection() {
             <FadeIn direction="left">
               <div className="relative overflow-hidden rounded-xl aspect-[16/9] image-zoom">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/990909558-9FUZz9L4LGu88jK1iQJAJdJHLhAYub.jpg"
-                  alt="Professional working with tablet in London's Canary Wharf financial district at night"
+                  src="/images/banking-practice-meeting.jpg"
+                  alt="Banking practice team meeting with colleagues gathered around round tables during a presentation"
                   className="w-full h-full object-cover"
                 />
               </div>
