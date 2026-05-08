@@ -8,7 +8,8 @@ const clients = [
   "Santander UK",
   "Nationwide",
   "Bank of England",
-  "Pay.UK",
+  "Leeds Building Society",
+  "Citigroup",
 ];
 
 const platforms = [
