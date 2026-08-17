@@ -33,7 +33,7 @@ export function Hero() {
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] mb-6">
                   Where banking
                   <br />
-                  meets <span className="text-[#A100FF]">Reinvention.</span>
+                  meets <span className="reinvention-word">Reinvention.</span>
                 </h1>
               </FadeIn>
               <FadeIn delay={600} duration={800}>

@@ -194,6 +194,41 @@ html {
   width: 100%;
 }
 
+/* Reinvention word — shimmer sweep + glow pulse */
+@keyframes reinvention-shimmer {
+  0% { background-position: -100% center; }
+  100% { background-position: 300% center; }
+}
+
+@keyframes reinvention-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(161, 0, 255, 0.45))
+            drop-shadow(0 0 18px rgba(161, 0, 255, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(161, 0, 255, 0.75))
+            drop-shadow(0 0 36px rgba(161, 0, 255, 0.35));
+  }
+}
+
+.reinvention-word {
+  background: linear-gradient(
+    105deg,
+    #A100FF 25%,
+    #c84dff 47%,
+    #e8aaff 52%,
+    #c84dff 57%,
+    #A100FF 75%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:
+    reinvention-shimmer 6s ease-in-out infinite,
+    reinvention-glow 3.5s ease-in-out infinite;
+}
+
 /* Card shine effect */
 .card-shine {
   position: relative;
